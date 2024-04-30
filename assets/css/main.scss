@@ -1,0 +1,31 @@
+@import url("./animations.scss");
+@import url("./global.scss");
+@import url("../fonts/DINPro/stylesheet.scss");
+@import url("../fonts/euclid-square/stylesheet.scss");
+@import url("../fonts/manrope/stylesheet.scss");
+
+body {
+  font-family: "Euclid Square", "sans-serif";
+  min-height: 200vh;
+}
+
+a,
+button,
+img {
+  user-select: none;
+}
+
+.container {
+  max-width: 108rem;
+  width: calc(100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    width: calc(100% - 4rem);
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: calc(100% - 8rem);
+  }
+}
