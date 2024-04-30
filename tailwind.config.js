@@ -12,12 +12,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "blue-light": "#00D1FF",
-        "blue-main": "#0098D9",
+        "blue-700": "#027BAF",
         "blue-dark": "#0069BB",
+        "blue-main": "#0098D9",
+        "blue-light": "#00D1FF",
         "blue-000": "#F0F3F7",
         "dark-blue-700": "#232B36",
         "dark-blue-main": "#002934",
+        "dark-blue-400": "#7B8189",
+        "dark-blue-000": "#F0F3F7",
         black: "#000000",
         white: "#FFFFFF",
       },
@@ -25,9 +28,9 @@ module.exports = {
         "shadow-btn": "0 0.25rem 2rem #00847A80",
       },
       screens: {
+        xl: "1600px",
         lg: "1280px",
         md: "768px",
-        xl: "1600px",
       },
       zIndex: {
         header: 5,

@@ -5,9 +5,9 @@
 <template>
   <LayoutText />
   <LayoutHeader />
-  <div>
+  <main class="text-dark-blue-main">
     <slot />
-  </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
