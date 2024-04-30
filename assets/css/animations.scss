@@ -1,0 +1,53 @@
+/* Common Fade */
+@keyframes fade-300 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-300-enter-active {
+  animation: fade-300 0.3s ease-in-out;
+}
+
+.fade-300-leave-active {
+  animation: fade-300 0.3s ease-in-out reverse;
+}
+
+/* Fade 150 */
+@keyframes fade-150 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-150-enter-active {
+  animation: fade-150 0.15s ease-in-out;
+}
+
+.fade-150-leave-active {
+  animation: fade-150 0.15s ease-in-out reverse;
+}
+
+/* scale 300 */
+@keyframes scale-300 {
+  0% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.scale-300-enter-active {
+  animation: scale-300 0.3s ease-in-out;
+}
+
+.scale-300-leave-active {
+  animation: scale-300 0.3s ease-in-out reverse;
+}
