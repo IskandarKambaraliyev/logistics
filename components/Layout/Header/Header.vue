@@ -221,7 +221,23 @@
               :left="chooseBtn ? chooseBtn.offsetLeft : 0"
             />
           </div>
+          <NuxtLink to="/contact" class="link_btn">
+            <span class="link_btn-label">Contact Us</span>
+          </NuxtLink>
         </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <UiButton
+          variant="secondary"
+          :color="sticky ? 'dark' : 'light'"
+          to="/order"
+        >
+          Check my order
+        </UiButton>
+        <UiButton variant="primary" :color="sticky ? 'dark' : 'light'">
+          Get an instant quote
+        </UiButton>
       </div>
     </div>
   </header>
