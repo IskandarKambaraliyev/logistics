@@ -1,6 +1,12 @@
 <script setup>
   import { links as data } from "~/data/header.js";
 
+  const instant = useInstant();
+
+  const openInstant = () => {
+    instant.value = true;
+  };
+
   const sticky = ref(true);
   const header = ref(null);
   const linksTop = ref(0);
@@ -232,7 +238,11 @@
         >
           Check my order
         </UiButton>
-        <UiButton variant="primary" :color="sticky ? 'dark' : 'light'">
+        <UiButton
+          variant="primary"
+          :color="sticky ? 'dark' : 'light'"
+          @click="openInstant"
+        >
           Get an instant quote
         </UiButton>
       </div>

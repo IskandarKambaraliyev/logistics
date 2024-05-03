@@ -7,6 +7,7 @@
   <LayoutText />
   <LayoutHeaderDesktop />
   <LayoutHeader />
+  <ModalsInstant />
   <main class="text-dark-blue-main">
     <slot />
   </main>
