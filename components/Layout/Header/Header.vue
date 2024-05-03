@@ -56,7 +56,7 @@
     } else {
       clearContent();
     }
-  };
+  };  
 
   watch(open, (val) => {
     if (val) {
