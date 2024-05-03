@@ -1,9 +1,11 @@
 <script setup>
 
+
 </script>
 
 <template>
   <LayoutText />
+  <LayoutHeaderDesktop />
   <LayoutHeader />
   <main class="text-dark-blue-main">
     <slot />

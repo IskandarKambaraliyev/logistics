@@ -23,6 +23,7 @@
 
 <template>
   <button
+    v-if="!to"
     class="ui_button"
     :class="`${variant === 'primary' ? 'primary' : 'secondary'} ${
       color === 'dark' ? 'dark' : 'light'
@@ -32,6 +33,19 @@
       <slot />
     </span>
   </button>
+
+  <NuxtLink
+    v-else
+    :to="to"
+    class="ui_button"
+    :class="`${variant === 'primary' ? 'primary' : 'secondary'} ${
+      color === 'dark' ? 'dark' : 'light'
+    }`"
+  >
+    <span class="label font-euclid" :class="`${labelClass}`">
+      <slot />
+    </span>
+  </NuxtLink>
 </template>
 
 <style lang="scss" scoped>
