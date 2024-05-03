@@ -56,13 +56,17 @@
     } else {
       clearContent();
     }
-  };  
+  };
 
   watch(open, (val) => {
     if (val) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      if (instant.value) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
       clearContent();
     }
   });
@@ -272,7 +276,7 @@
               </NuxtLink>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pb-16">
-              <UiButton to="/oder" variant="secondary" color="light">
+              <UiButton to="/order" variant="secondary" color="light">
                 Check my order
               </UiButton>
               <UiButton variant="primary" color="light" @click="openInstant">
