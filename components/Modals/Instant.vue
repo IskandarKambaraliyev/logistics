@@ -5,6 +5,7 @@
   watch(instant, (val) => {
     if (val) {
       document.body.style.overflow = "hidden";
+      window.history.pushState(null, "", "");
     } else {
       if (menu.value) {
         document.body.style.overflow = "hidden";
@@ -12,14 +13,28 @@
     }
   });
 
+  const handlePopstate = () => {
+    instant.value = false;
+  };
+
+  onMounted(() => {
+    window.addEventListener("popstate", handlePopstate);
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener("popstate", handlePopstate);
+  });
+
   const wrapper = ref(null);
 
   onClickOutside(wrapper, () => {
     instant.value = false;
+    window.history.back();
   });
 
   const handleClose = () => {
     instant.value = false;
+    window.history.back();
   };
 
   const form = reactive({

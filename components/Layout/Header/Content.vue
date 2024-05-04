@@ -5,7 +5,7 @@
       required: true,
     },
     content: {
-      type: String,
+      type: Array,
       required: true,
     },
     for: {
@@ -79,8 +79,12 @@
             :to="item.to"
             class="flex flex-col"
           >
-            <span class="text-base font-bold font-manrope text-white">{{ item.title }}</span>
-            <span class="text-base font-bold font-manrope text-dark-blue-400">{{ item.description }}</span>
+            <span class="text-base font-bold font-manrope text-white">
+              {{ item.title }}
+            </span>
+            <span class="text-base font-bold font-manrope text-dark-blue-400">
+              {{ item.description }}
+            </span>
           </NuxtLink>
         </div>
       </div>
