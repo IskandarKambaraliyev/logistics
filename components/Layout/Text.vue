@@ -189,10 +189,10 @@
 
 <template>
   <div
-    class="fixed top-0 left-0 z-text w-full animated-text-wrapper blue-gradient text-white max-h-10 flex items-center overflow-hidden"
+    class="fixed top-0 left-0 z-text w-full animated-text-wrapper blue-gradient text-white h-6 md:h-10 flex items-center overflow-hidden"
   >
     <div
-      class="text-single relative py-2 whitespace-nowrap m-0 will-change-transform"
+      class="text-single relative md:py-2 whitespace-nowrap m-0 will-change-transform flex items-center"
     >
       <span class="font-manrope animated-text">
         {{ text }}
@@ -229,6 +229,16 @@
           height: 0.5rem;
           border-radius: 9999px;
           background-color: white;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 0.45rem !important;
+          line-height: 150% !important;
+
+          &::before {
+            width: 0.25rem !important;
+            height: 0.25rem !important;
+          }
         }
       }
     }

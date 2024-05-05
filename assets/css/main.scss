@@ -15,6 +15,14 @@ img {
   user-select: none;
 }
 
+section {
+  margin-top: 7.5rem;
+
+  @media screen and (min-width: 1280px) {
+    margin-top: 11.25rem;
+  }
+}
+
 .container {
   max-width: 108rem;
   width: calc(100% - 2rem);

@@ -29,7 +29,7 @@
       color === 'dark' ? 'dark' : 'light'
     }`"
   >
-    <span class="label font-euclid" :class="`${labelClass}`">
+    <span class="label font-euclid text-center" :class="`${labelClass}`">
       <slot />
     </span>
   </button>
@@ -42,7 +42,7 @@
       color === 'dark' ? 'dark' : 'light'
     }`"
   >
-    <span class="label font-euclid" :class="`${labelClass}`">
+    <span class="label font-euclid text-center" :class="`${labelClass}`">
       <slot />
     </span>
   </NuxtLink>

@@ -82,7 +82,7 @@
 <template>
   <header
     ref="header"
-    class="header lg:!hidden fixed top-10 left-0 z-modal w-full py-3 border-b border-white/20 transition"
+    class="header lg:!hidden fixed top-6 md:top-10 left-0 z-modal w-full py-3 border-b border-white/20 transition"
     :class="
       sticky && !open
         ? 'bg-white text-dark-blue-main'
