@@ -25,11 +25,12 @@
       spaceBetween: 24,
     },
     768: {
-      slidesPerView: 4,
+      slidesPerView: 5.9,
       spaceBetween: 30,
+      centeredSlides: true,
     },
     1024: {
-      slidesPerView: 6,
+      slidesPerView: 7,
       spaceBetween: 40,
     },
     1280: {
@@ -79,33 +80,55 @@
 </script>
 
 <template>
-  <div class="pt-[5.5rem] md:pt-[7.5rem] rounded-t-[2rem] -mt-8 bg-white">
-    <div class="container space-y-8 md:space-y-14">
+  <div
+    class="pt-[5.5rem] md:pt-[7.5rem] rounded-t-[2rem] -mt-8 bg-white space-y-8 md:space-y-14"
+  >
+    <div class="container">
       <UiTitle>
         Trusted by
         <span>the world’s best</span>
       </UiTitle>
-
-      <swiper :modules="modules" :breakpoints="breakpoints" :loop="true" :autoplay="autoplayConfig">
-        <swiper-slide v-for="item in data" :key="item.id" class="">
-          <NuxtImg
-            provider="ipx"
-            format="webp"
-            :placeholder="[20, 10, 5, 10]"
-            :src="item.image"
-            :alt="`Brand - ${item.id}`"
-            class="w-full h-auto"
-          />
-        </swiper-slide>
-      </swiper>
     </div>
+    <swiper
+      :modules="modules"
+      :breakpoints="breakpoints"
+      :loop="true"
+      :autoplay="autoplayConfig"
+    >
+      <swiper-slide
+        v-for="item in data"
+        :key="item.id"
+        class="!flex justify-center"
+      >
+        <NuxtImg
+          provider="ipx"
+          format="webp"
+          :placeholder="[20, 10, 5, 10]"
+          :src="item.image"
+          :alt="`Brand - ${item.id}`"
+          class="w-auto h-full"
+        />
+      </swiper-slide>
+      <swiper-slide
+        v-for="item in data"
+        :key="item.id"
+        class="!flex justify-center"
+      >
+        <NuxtImg
+          provider="ipx"
+          format="webp"
+          :placeholder="[20, 10, 5, 10]"
+          :src="item.image"
+          :alt="`Brand - ${item.id}`"
+          class="w-auto h-full"
+        />
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <style lang="scss">
-
-.swiper-wrapper {
-  align-items: center;
-}
-
+  .swiper-wrapper {
+    align-items: center;
+  }
 </style>
