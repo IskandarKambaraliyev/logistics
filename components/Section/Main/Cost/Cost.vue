@@ -115,6 +115,10 @@
           @apply border-t border-white/20;
           padding-top: 2rem;
         }
+
+        &:not(:nth-last-child(1)) {
+          @apply pb-8;
+        }
       }
     }
   }

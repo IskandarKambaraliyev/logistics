@@ -5,6 +5,7 @@
   <SectionMainHowBook />
   <SectionMainWhyBook />
   <SectionMainCost />
+  <SectionMainServices />
 </template>
 
 <style lang="scss" scoped></style>
