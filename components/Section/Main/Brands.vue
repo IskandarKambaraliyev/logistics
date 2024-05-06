@@ -98,7 +98,7 @@
       <swiper-slide
         v-for="item in data"
         :key="item.id"
-        class="!flex justify-center"
+        class="!flex justify-center main_brands_swiper"
       >
         <NuxtImg
           provider="ipx"
@@ -128,7 +128,9 @@
 </template>
 
 <style lang="scss">
-  .swiper-wrapper {
-    align-items: center;
+  .main_brands_swiper {
+    .swiper-wrapper {
+      align-items: center;
+    }
   }
 </style>

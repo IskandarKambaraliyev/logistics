@@ -7,6 +7,7 @@
   <SectionMainCost />
   <SectionMainBrands />
   <SectionMainServices />
+  <SectionMainReviews />
   <SectionMainFaq />
   <SectionMainLatest />
 </template>
