@@ -83,6 +83,7 @@
         <div
           class="relative bg-white max-w-[50rem] w-full mx-auto rounded-[2rem] p-6 md:p-8 text-dark-blue-main flex flex-col gap-6 md:gap-12"
           ref="wrapper"
+          :style="{ boxShadow: '0px 4px 64px 0px rgba(0, 0, 0, 0.25)' }"
         >
           <div class="flex items-start justify-between gap-4">
             <h4

@@ -5,7 +5,10 @@
   <SectionMainHowBook />
   <SectionMainWhyBook />
   <SectionMainCost />
+  <SectionMainBrands />
   <SectionMainServices />
+  <SectionMainFaq />
+  <SectionMainLatest />
 </template>
 
 <style lang="scss" scoped></style>

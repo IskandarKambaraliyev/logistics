@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     format: ["webp"],
     provider: "ipx",
     domains: ["unsplash.com", "imgbb.com", "cp.oiltech.uz", "i.ibb.co"],
-    dir: "~/assets/images",
     screens: {
       sm: 640,
       md: 768,

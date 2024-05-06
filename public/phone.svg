@@ -1,0 +1,17 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="phone" clip-path="url(#clip0_113_2317)">
+<g id="Vector">
+<path d="M35 25.7662L26.2167 24.7495L22.0167 28.9495C17.3 26.5495 13.4334 22.6995 11.0334 17.9662L15.25 13.7495L14.2334 4.99951H5.05002C4.08335 21.9662 18.0334 35.9162 35 34.9495V25.7662V25.7662Z" fill="white"/>
+<path d="M35 25.7662L26.2167 24.7495L22.0167 28.9495C17.3 26.5495 13.4334 22.6995 11.0334 17.9662L15.25 13.7495L14.2334 4.99951H5.05002C4.08335 21.9662 18.0334 35.9162 35 34.9495V25.7662V25.7662Z" fill="url(#paint0_linear_113_2317)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_113_2317" x1="5.00262" y1="-48.9958" x2="35.6675" y2="-48.9412" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0098D9"/>
+<stop offset="1" stop-color="#0085FF"/>
+</linearGradient>
+<clipPath id="clip0_113_2317">
+<rect width="40" height="40" fill="white"/>
+</clipPath>
+</defs>
+</svg>

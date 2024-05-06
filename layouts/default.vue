@@ -1,7 +1,4 @@
-<script setup>
-
-
-</script>
+<script setup></script>
 
 <template>
   <LayoutText />
@@ -11,8 +8,7 @@
   <main class="text-dark-blue-main">
     <slot />
   </main>
+  <LayoutFooter />
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
