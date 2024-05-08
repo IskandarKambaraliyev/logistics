@@ -59,6 +59,18 @@
         },
         rating: 4,
       },
+      {
+        id: 5,
+        content:
+          "As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, ",
+        user: {
+          name: "CHI XAN SZU",
+          position: "CEO of something",
+          image:
+            "https://s3-alpha-sig.figma.com/img/c6de/7445/64812a7f79946f13a5afc0dd1872510b?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jT9ZZU6dcx4ViVGjLKT2KIt6C-3cOaJNMYkzwWIcwtJy7zZISn8KPP5Rk7eoCcOoYtOYZG~RBocp4E5F6wAdyhcjI4n1qVsjZUFX-gH8PAU1sEBis63Z~HHy9wWT3wis8-pSebnSN8lG8J1-neYFZ6sfum~KTpUcrRt35H-MVatWHdI6t~mZnLSfH54in1LXqOK-rgaEBkLeRQK~dKWhgPQtqFlU~p2Lfy8pNbHX5yUqmQE0hUBG1vWLM8Y5AqiKMRVeLOee8uwwGZrWMp9nodQqbAhPGTs7Ez41KQnuQU9DWuH-rR8j~8fLah2-n-1PDV6sfAGg4OeeGcjgBMzGOQ__",
+        },
+        rating: 4,
+      },
     ],
   };
 
@@ -66,13 +78,13 @@
 
   const autoplayConfig = {
     delay: 5000,
-    disableOnInteraction: true,
+    disableOnInteraction: false,
     pauseOnMouseEnter: false,
   };
 
   const breakpoints = {
     100: {
-      slidesPerView: 1.2,
+      slidesPerView: 1.1,
       spaceBetween: 16,
     },
     450: {
@@ -82,7 +94,6 @@
     768: {
       slidesPerView: 1.7,
       spaceBetween: 16,
-      centeredSlides: true,
     },
     1024: {
       slidesPerView: 2.2,
@@ -147,6 +158,7 @@
               viewBox="0 0 96 96"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="w-full h-auto"
             >
               <g clip-path="url(#clip0_113_2180)">
                 <path
@@ -185,70 +197,72 @@
         :modules="modules"
         :breakpoints="breakpoints"
         :loop="true"
+        :autoplay="autoplayConfig"
         class="main_reviews_swiper"
       >
-        <swiper-slide
-          v-for="item in data.feedbacks"
-          :key="item.id"
-          class="flex flex-col gap-4 lg:gap-5 p-6 rounded-[1.5rem] md:rounded-[2rem] border border-dark-blue-000 h-full"
-        >
-          <div class="flex flex-col gap-2 lg:gap-5">
-            <div class="flex items-center">
-              <div v-for="(star, index) in 5" :key="index">
-                <svg
-                  width="2rem"
-                  height="2rem"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clip-path="url(#clip0_113_2214)">
-                    <path
-                      d="M19.2401 13.3334L16.0001 2.66675L12.7601 13.3334H2.66675L10.9067 19.2134L7.77341 29.3334L16.0001 23.0801L24.2401 29.3334L21.1067 19.2134L29.3334 13.3334H19.2401Z"
-                      :class="
-                        index < item.rating
-                          ? 'fill-yellow-main'
-                          : 'fill-dark-blue-100'
-                      "
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_113_2214">
-                      <rect width="32" height="32" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
+        <swiper-slide v-for="item in data.feedbacks" :key="item.id">
+          <div
+            class="flex-1 flex flex-col gap-4 lg:gap-5 p-6 rounded-[1.5rem] md:rounded-[2rem] border border-dark-blue-000 h-full justify-between"
+          >
+            <div class="flex flex-col gap-2 lg:gap-2">
+              <div class="flex items-center">
+                <div v-for="(star, index) in 5" :key="index" class="size-4 lg:size-6">
+                  <svg
+                    width="2rem"
+                    height="2rem"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-full h-auto"
+                  >
+                    <g clip-path="url(#clip0_113_2214)">
+                      <path
+                        d="M19.2401 13.3334L16.0001 2.66675L12.7601 13.3334H2.66675L10.9067 19.2134L7.77341 29.3334L16.0001 23.0801L24.2401 29.3334L21.1067 19.2134L29.3334 13.3334H19.2401Z"
+                        :class="
+                          index < item.rating
+                            ? 'fill-yellow-main'
+                            : 'fill-dark-blue-100'
+                        "
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_113_2214">
+                        <rect width="32" height="32" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
               </div>
+
+              <div class="line-clamp-4 text-[0.875rem] leading-5">{{ item.content }}</div>
             </div>
 
-            <div>{{ item.content }}</div>
-          </div>
+            <div class="flex items-center gap-2 lg:gap-5">
+              <div class="size-10 lg:size-14 rounded-full overflow-hidden">
+                <NuxtImg
+                  provider="ipx"
+                  format="webp"
+                  width="80"
+                  height="80"
+                  :placeholder="[10, 10, 5, 10]"
+                  :src="item.user.image"
+                  :alt="`User - ${item.user.name}`"
+                  class="size-full object-cover"
+                />
+              </div>
 
-          <div class="flex items-center gap-5">
-            <div class="size-12 lg:size-20 rounded-full overflow-hidden">
-              <NuxtImg
-                provider="ipx"
-                format="webp"
-                width="80"
-                height="80"
-                :placeholder="[10, 10, 5, 10]"
-                :src="item.user.image"
-                :alt="`User - ${item.user.name}`"
-                class="size-full object-cover"
-              />
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <span
-                class="text-[1.25rem] lg:text-[1.75rem] leading-none font-bold font-din"
-              >
-                {{ item.user.name }}
-              </span>
-              <span
-                class="text-[0.875rem] leading-4 lg:text-[1.25rem] lg:leading-[1.75rem] font-medium"
-              >
-                {{ item.user.position }}
-              </span>
+              <div class="flex flex-col">
+                <span
+                  class="text-[1.25rem] lg:text-[1.75rem] leading-none font-bold font-din capitalize"
+                >
+                  {{ item.user.name }}
+                </span>
+                <span
+                  class="text-[0.875rem] leading-4 lg:text-[1rem] lg:leading-[1.5rem] font-medium"
+                >
+                  {{ item.user.position }}
+                </span>
+              </div>
             </div>
           </div>
         </swiper-slide>
@@ -259,5 +273,8 @@
 
 <style lang="scss" scoped>
   .main_reviews_swiper {
+    .swiper-slide {
+      height: auto;
+    }
   }
 </style>

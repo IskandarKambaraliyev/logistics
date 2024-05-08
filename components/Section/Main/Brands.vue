@@ -83,47 +83,41 @@
   <div
     class="pt-[5.5rem] md:pt-[7.5rem] rounded-t-[2rem] -mt-8 bg-white space-y-8 md:space-y-14"
   >
-    <div class="container">
+    <div class="container space-y-14">
       <UiTitle>
         Trusted by
         <span>the world’s best</span>
       </UiTitle>
+      <swiper
+        :modules="modules"
+        :breakpoints="breakpoints"
+        :loop="true"
+        :autoplay="autoplayConfig"
+      >
+        <swiper-slide
+          v-for="item in data"
+          :key="item.id"
+          class="!flex justify-center main_brands_swiper"
+        >
+          <img
+            :src="item.image"
+            :alt="`Brand - ${item.id}`"
+            class="w-auto h-full"
+          />
+        </swiper-slide>
+        <swiper-slide
+          v-for="item in data"
+          :key="item.id"
+          class="!flex justify-center main_brands_swiper"
+        >
+          <img
+            :src="item.image"
+            :alt="`Brand - ${item.id}`"
+            class="w-auto h-full"
+          />
+        </swiper-slide>
+      </swiper>
     </div>
-    <swiper
-      :modules="modules"
-      :breakpoints="breakpoints"
-      :loop="true"
-      :autoplay="autoplayConfig"
-    >
-      <swiper-slide
-        v-for="item in data"
-        :key="item.id"
-        class="!flex justify-center main_brands_swiper"
-      >
-        <NuxtImg
-          provider="ipx"
-          format="webp"
-          :placeholder="[20, 10, 5, 10]"
-          :src="item.image"
-          :alt="`Brand - ${item.id}`"
-          class="w-auto h-full"
-        />
-      </swiper-slide>
-      <swiper-slide
-        v-for="item in data"
-        :key="item.id"
-        class="!flex justify-center"
-      >
-        <NuxtImg
-          provider="ipx"
-          format="webp"
-          :placeholder="[20, 10, 5, 10]"
-          :src="item.image"
-          :alt="`Brand - ${item.id}`"
-          class="w-auto h-full"
-        />
-      </swiper-slide>
-    </swiper>
   </div>
 </template>
 

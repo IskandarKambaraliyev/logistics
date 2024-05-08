@@ -9,7 +9,7 @@
   <SectionMainServices />
   <SectionMainReviews />
   <SectionMainFaq />
-  <SectionMainLatest />
+  <BaseLatest />
 </template>
 
 <style lang="scss" scoped></style>

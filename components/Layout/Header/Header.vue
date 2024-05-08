@@ -275,7 +275,7 @@
                 <span class="menu_btn-label font-euclid">Contact Us</span>
               </NuxtLink>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pb-24">
               <UiButton to="/order" variant="secondary" color="light">
                 Check my order
               </UiButton>
@@ -306,7 +306,7 @@
     position: fixed;
     top: 2.5rem;
     left: 0;
-    bottom: 0;
+    height: calc(100lvh - 2.5rem);
     width: 100%;
 
     .wrapper {

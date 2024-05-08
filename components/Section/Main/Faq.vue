@@ -85,7 +85,7 @@
       >
         <template #default="{ item, index, open }">
           <button
-            class="p-5 bg-blue-000 transition flex items-center justify-between"
+            class="p-5 bg-blue-000 transition flex items-center justify-between text-left"
             :class="`${open ? 'bg-blue-dark text-white' : ''}`"
           >
             <span
