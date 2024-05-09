@@ -1,6 +1,12 @@
 <script setup>
+  import { DatePicker } from "v-calendar";
+  import { format } from "date-fns";
+  import "v-calendar/dist/style.css";
+
   const instant = useInstant();
   const menu = useMenu();
+
+  const today = new Date();
 
   watch(instant, (val) => {
     if (val) {
@@ -78,7 +84,10 @@
 
 <template>
   <Transition name="fade-300">
-    <div v-if="instant" class="fixed top-0 left-0 w-full h-[100lvh] z-modal+1 backdrop-blur-lg">
+    <div
+      v-if="instant"
+      class="fixed top-0 left-0 w-full h-[100lvh] z-modal+1 backdrop-blur-lg"
+    >
       <div class="h-full overflow-y-auto px-4 md:px-8 py-16 lg:py-32 relative">
         <div
           class="relative bg-white max-w-[50rem] w-full mx-auto rounded-[2rem] p-6 md:p-8 text-dark-blue-main flex flex-col gap-6 md:gap-12"
@@ -120,24 +129,29 @@
             </UiButtonCircle>
           </div>
 
-          <form @submit.prevent="handleSubmit" class="flex flex-col gap-8">
+          <form
+            @submit.prevent="handleSubmit"
+            class="flex flex-col gap-8 lg:gap-12"
+          >
             <div class="form_group">
               <h6 class="form_group-title">Orign & Destination</h6>
 
               <div class="flex flex-col gap-6">
                 <div class="form_group-inputs">
-                  <input
-                    type="text"
-                    v-model="form.pickup"
-                    placeholder="Pick-up location"
-                    required
-                  />
-                  <input
-                    type="text"
-                    v-model="form.delivery"
-                    placeholder="Delivery location"
-                    required
-                  />
+                  <div>
+                    <span>*Pick-up location</span>
+                    <UiFormSelectZipcode
+                      v-model="form.pickup"
+                      placeholder="City, State, Zipcode"
+                    />
+                  </div>
+                  <div>
+                    <span>*Delivery location</span>
+                    <UiFormSelectZipcode
+                      v-model="form.delivery"
+                      placeholder="City, State, Zipcode"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -147,24 +161,34 @@
 
               <div class="flex flex-col gap-6">
                 <div class="form_group-inputs c3">
-                  <input
-                    type="text"
-                    v-model="form.year"
-                    placeholder="Year"
-                    required
-                  />
-                  <input
-                    type="text"
-                    v-model="form.make"
-                    placeholder="Make"
-                    required
-                  />
-                  <input
-                    type="text"
-                    v-model="form.model"
-                    placeholder="Model"
-                    required
-                  />
+                  <div>
+                    <span>*Year</span>
+                    <input
+                      type="text"
+                      v-model="form.year"
+                      :placeholder="new Date().getFullYear()"
+                      maxLength="4"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span>*Make</span>
+                    <input
+                      type="text"
+                      v-model="form.make"
+                      placeholder="Make"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span>*Model</span>
+                    <input
+                      type="text"
+                      v-model="form.model"
+                      placeholder="Model"
+                      required
+                    />
+                  </div>
                 </div>
 
                 <div class="form_group-inputs">
@@ -316,33 +340,74 @@
 
               <div class="flex flex-col gap-6">
                 <div class="form_group-inputs">
-                  <input
-                    type="text"
-                    v-model="form.ship_date"
-                    placeholder="Ship date"
-                    required
-                  />
-                  <input
-                    type="text"
-                    v-model="form.name"
-                    placeholder="Name"
-                    required
-                  />
+                  <div>
+                    <span>*Ship date</span>
+                    <UPopover>
+                      <button
+                        class="input w-full text-left"
+                        :class="
+                          form.ship_date
+                            ? 'text-dark-blue-main'
+                            : 'text-dark-blue-300'
+                        "
+                        type="button"
+                      >
+                        {{
+                          form.ship_date
+                            ? format(form.ship_date, "d MMM, yyy")
+                            : "Ship date"
+                        }}
+                      </button>
+
+                      <template #panel="{ close }">
+                        <DatePicker
+                          locale="en"
+                          v-model="form.ship_date"
+                          is-required=""
+                          @dayclick="close"
+                          :min-date="today"
+                          :max-date="
+                            new Date(
+                              today.getFullYear(),
+                              today.getMonth() + 6,
+                              0
+                            )
+                          "
+                        />
+                      </template>
+                    </UPopover>
+                  </div>
+                  <div>
+                    <span>*Name</span>
+                    <input
+                      type="text"
+                      v-model="form.name"
+                      placeholder="Name"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
                 </div>
 
                 <div class="form_group-inputs">
-                  <input
-                    type="text"
-                    v-model="form.email"
-                    placeholder="Email"
-                    required
-                  />
-                  <input
-                    type="text"
-                    v-model="form.phone"
-                    placeholder="Phone"
-                    required
-                  />
+                  <div>
+                    <span>*Email</span>
+                    <input
+                      type="email"
+                      v-model="form.email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <span>*Phone</span>
+                    <input
+                      type="text"
+                      v-model="form.phone"
+                      placeholder="Phone"
+                      required
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -359,12 +424,12 @@
 
 <style lang="scss" scoped>
   .form_group {
-    @apply gap-2 md:gap-6;
+    @apply gap-2 md:gap-4;
     display: flex;
     flex-direction: column;
 
     &-title {
-      @apply text-[0.875rem] md:text-[1.25rem];
+      @apply text-[0.875rem] md:text-[1.25rem] pb-2 md:pb-4 border-b border-dark-blue-700/10;
       line-height: 1.5rem;
       font-weight: 500;
     }
@@ -376,7 +441,8 @@
         @apply md:grid-cols-3;
       }
 
-      input {
+      input,
+      .input {
         @apply rounded-full ring-1 ring-dark-blue-000 px-5 py-3 md:py-4 outline-none focus:ring-blue-500 text-[0.875rem] md:text-[1rem] leading-6 placeholder:text-dark-blue-300;
       }
 
@@ -384,8 +450,18 @@
         @apply rounded-full flex items-center gap-2.5 ring-1 ring-dark-blue-000 px-5 py-3 md:py-4 outline-none transition-all;
 
         span {
-          @apply text-[0.875rem] md:text-[1rem] leading-6 text-dark-blue-300;
+          @apply text-[0.875rem] md:text-[1rem] leading-6;
           flex: 1;
+        }
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        span {
+          @apply text-base font-medium;
         }
       }
     }

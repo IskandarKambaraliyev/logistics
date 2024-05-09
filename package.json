@@ -10,13 +10,16 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.22",
     "@nuxt/image": "^1.6.0",
     "@nuxt/ui": "^2.15.2",
     "@vueuse/nuxt": "^10.9.0",
+    "date-fns": "^3.6.0",
     "gsap": "^3.12.5",
     "nuxt": "^3.11.2",
     "sass": "^1.75.0",
     "swiper": "^11.1.1",
+    "v-calendar": "^3.1.2",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   }
