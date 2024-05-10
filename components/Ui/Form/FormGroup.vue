@@ -16,7 +16,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-3">
     <label v-if="label" class="text-base font-medium" :for="props?.for">
       {{ required ? "*" : "" }}{{ label }}
     </label>

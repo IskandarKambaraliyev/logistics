@@ -86,6 +86,25 @@
     openDate.value = false;
   });
 
+  const handlePhone = () => {
+    let inputVal = form.phone.replace(/\D/g, "");
+
+    if (inputVal.length > 12) {
+      inputVal = inputVal.substring(0, 10);
+    }
+
+    if (inputVal.length <= 3) {
+      form.phone = `(${inputVal}`;
+    } else if (inputVal.length <= 6) {
+      form.phone = `(${inputVal.substring(0, 3)}) ${inputVal.substring(3)}`;
+    } else {
+      form.phone = `(${inputVal.substring(0, 3)}) ${inputVal.substring(
+        3,
+        6
+      )}-${inputVal.substring(6)}`;
+    }
+  };
+
   const handleSubmit = (e) => {
     if (form.ship_date) {
       const body = {
@@ -190,10 +209,14 @@
               <div class="flex flex-col gap-6">
                 <div class="form_group-inputs c3">
                   <UiFormGroup label="Year" for="instant-year">
-                    <UiFormInput
+                    <input
+                      type="text"
                       v-model="form.year"
                       :placeholder="new Date().getFullYear()"
                       :maxLength="4"
+                      @input="
+                        form.year = $event.target.value.replace(/\D/g, '')
+                      "
                       id="instant-year"
                     />
                   </UiFormGroup>
@@ -214,145 +237,34 @@
                 </div>
 
                 <div class="form_group-inputs">
-                  <button
-                    type="button"
-                    class="radio_btn"
+                  <UiFormRadio
                     @click="handleChangeType(1)"
+                    :active="form.type === 1"
                   >
-                    <div class="icon">
-                      <svg
-                        width="1rem"
-                        height="1rem"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.83301 7.99992C1.83301 4.59606 4.59582 1.83325 7.99967 1.83325C11.4035 1.83325 14.1663 4.59606 14.1663 7.99992C14.1663 11.4038 11.4035 14.1666 7.99967 14.1666C4.59582 14.1666 1.83301 11.4038 1.83301 7.99992ZM2.16634 7.99992C2.16634 11.2227 4.77687 13.8333 7.99967 13.8333C11.2225 13.8333 13.833 11.2227 13.833 7.99992C13.833 4.77711 11.2225 2.16659 7.99967 2.16659C4.77687 2.16659 2.16634 4.77711 2.16634 7.99992Z"
-                          :class="
-                            form.type === 1
-                              ? 'stroke-blue-500'
-                              : 'stroke-dark-blue-main'
-                          "
-                        />
-                        <path
-                          d="M8.00033 11.3334C9.84127 11.3334 11.3337 9.84103 11.3337 8.00008C11.3337 6.15913 9.84127 4.66675 8.00033 4.66675C6.15938 4.66675 4.66699 6.15913 4.66699 8.00008C4.66699 9.84103 6.15938 11.3334 8.00033 11.3334Z"
-                          fill="#008FFF"
-                          :class="
-                            form.type === 1
-                              ? 'fill-blue-500'
-                              : 'fill-dark-blue-main hidden'
-                          "
-                        />
-                      </svg>
-                    </div>
-                    <span>Open/Standart</span>
-                  </button>
-                  <button
-                    type="button"
-                    class="radio_btn"
+                    Open/Standart
+                  </UiFormRadio>
+
+                  <UiFormRadio
                     @click="handleChangeType(2)"
+                    :active="form.type === 2"
                   >
-                    <div class="icon">
-                      <svg
-                        width="1rem"
-                        height="1rem"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.83301 7.99992C1.83301 4.59606 4.59582 1.83325 7.99967 1.83325C11.4035 1.83325 14.1663 4.59606 14.1663 7.99992C14.1663 11.4038 11.4035 14.1666 7.99967 14.1666C4.59582 14.1666 1.83301 11.4038 1.83301 7.99992ZM2.16634 7.99992C2.16634 11.2227 4.77687 13.8333 7.99967 13.8333C11.2225 13.8333 13.833 11.2227 13.833 7.99992C13.833 4.77711 11.2225 2.16659 7.99967 2.16659C4.77687 2.16659 2.16634 4.77711 2.16634 7.99992Z"
-                          :class="
-                            form.type === 2
-                              ? 'stroke-blue-500'
-                              : 'stroke-dark-blue-main'
-                          "
-                        />
-                        <path
-                          d="M8.00033 11.3334C9.84127 11.3334 11.3337 9.84103 11.3337 8.00008C11.3337 6.15913 9.84127 4.66675 8.00033 4.66675C6.15938 4.66675 4.66699 6.15913 4.66699 8.00008C4.66699 9.84103 6.15938 11.3334 8.00033 11.3334Z"
-                          fill="#008FFF"
-                          :class="
-                            form.type === 2
-                              ? 'fill-blue-500'
-                              : 'fill-dark-blue-main hidden'
-                          "
-                        />
-                      </svg>
-                    </div>
-                    <span>Open/Standart</span>
-                  </button>
+                    Enclosed
+                  </UiFormRadio>
                 </div>
 
                 <div class="form_group-inputs">
-                  <button
-                    type="button"
-                    class="radio_btn"
+                  <UiFormRadio
                     @click="handleChangeVehicle(1)"
+                    :active="form.vehicle === 1"
                   >
-                    <div class="icon">
-                      <svg
-                        width="1rem"
-                        height="1rem"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.83301 7.99992C1.83301 4.59606 4.59582 1.83325 7.99967 1.83325C11.4035 1.83325 14.1663 4.59606 14.1663 7.99992C14.1663 11.4038 11.4035 14.1666 7.99967 14.1666C4.59582 14.1666 1.83301 11.4038 1.83301 7.99992ZM2.16634 7.99992C2.16634 11.2227 4.77687 13.8333 7.99967 13.8333C11.2225 13.8333 13.833 11.2227 13.833 7.99992C13.833 4.77711 11.2225 2.16659 7.99967 2.16659C4.77687 2.16659 2.16634 4.77711 2.16634 7.99992Z"
-                          :class="
-                            form.vehicle === 1
-                              ? 'stroke-blue-500'
-                              : 'stroke-dark-blue-main'
-                          "
-                        />
-                        <path
-                          d="M8.00033 11.3334C9.84127 11.3334 11.3337 9.84103 11.3337 8.00008C11.3337 6.15913 9.84127 4.66675 8.00033 4.66675C6.15938 4.66675 4.66699 6.15913 4.66699 8.00008C4.66699 9.84103 6.15938 11.3334 8.00033 11.3334Z"
-                          fill="#008FFF"
-                          :class="
-                            form.vehicle === 1
-                              ? 'fill-blue-500'
-                              : 'fill-dark-blue-main hidden'
-                          "
-                        />
-                      </svg>
-                    </div>
-                    <span>Vehicle drivers</span>
-                  </button>
-                  <button
-                    type="button"
-                    class="radio_btn"
+                    Vehicle drivers
+                  </UiFormRadio>
+                  <UiFormRadio
                     @click="handleChangeVehicle(2)"
+                    :active="form.vehicle === 2"
                   >
-                    <div class="icon">
-                      <svg
-                        width="1rem"
-                        height="1rem"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.83301 7.99992C1.83301 4.59606 4.59582 1.83325 7.99967 1.83325C11.4035 1.83325 14.1663 4.59606 14.1663 7.99992C14.1663 11.4038 11.4035 14.1666 7.99967 14.1666C4.59582 14.1666 1.83301 11.4038 1.83301 7.99992ZM2.16634 7.99992C2.16634 11.2227 4.77687 13.8333 7.99967 13.8333C11.2225 13.8333 13.833 11.2227 13.833 7.99992C13.833 4.77711 11.2225 2.16659 7.99967 2.16659C4.77687 2.16659 2.16634 4.77711 2.16634 7.99992Z"
-                          :class="
-                            form.vehicle === 2
-                              ? 'stroke-blue-500'
-                              : 'stroke-dark-blue-main'
-                          "
-                        />
-                        <path
-                          d="M8.00033 11.3334C9.84127 11.3334 11.3337 9.84103 11.3337 8.00008C11.3337 6.15913 9.84127 4.66675 8.00033 4.66675C6.15938 4.66675 4.66699 6.15913 4.66699 8.00008C4.66699 9.84103 6.15938 11.3334 8.00033 11.3334Z"
-                          fill="#008FFF"
-                          :class="
-                            form.vehicle === 2
-                              ? 'fill-blue-500'
-                              : 'fill-dark-blue-main hidden'
-                          "
-                        />
-                      </svg>
-                    </div>
-                    <span>Inoperable</span>
-                  </button>
+                    Inoperable
+                  </UiFormRadio>
                 </div>
               </div>
             </div>
@@ -377,6 +289,7 @@
                         :placeholder="format(today, 'd MMM, yyy')"
                         id="instant-ship-date"
                         ref="datePickInput"
+                        required
                       />
 
                       <Transition name="fade-150">
@@ -418,11 +331,19 @@
                     />
                   </UiFormGroup>
                   <UiFormGroup label="Phone" for="instant-phone">
-                    <UiFormInput
+                    <input
+                      type="text"
                       v-model="form.phone"
                       placeholder="(000) 000-0000"
                       id="instant-phone"
+                      @input="handlePhone"
+                      maxlength="14"
                     />
+                    <!-- <UiFormInput
+                      v-model="form.phone"
+                      placeholder="(000) 000-0000"
+                      id="instant-phone"
+                    /> -->
                   </UiFormGroup>
                 </div>
               </div>

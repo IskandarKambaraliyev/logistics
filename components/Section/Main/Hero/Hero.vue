@@ -4,7 +4,9 @@
 </script>
 
 <template>
-  <div class="relative min-h-[100svh]">
+  <div
+    class="relative min-h-[100svh] flex flex-col justify-center lg:justify-end py-40"
+  >
     <div class="absolute inset-0 z-[-1]">
       <NuxtImg
         provider="ipx"
@@ -25,6 +27,17 @@
           'linear-gradient(270deg, rgba(0, 136, 179, 0.00) 8.23%, rgba(0, 57, 74, 0.50) 91.88%), linear-gradient(180deg, rgba(0, 57, 74, 0.50) 0.52%, rgba(0, 57, 74, 0.00) 72.06%)',
       }"
     />
+
+    <div class="relative">
+      <div class="container space-y-8 md:space-y-10">
+        <UiTitle class="text-white">
+          A nationwide auto transport company that offers speedy and dependable
+          service
+        </UiTitle>
+
+        <SectionMainHeroQuote />
+      </div>
+    </div>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 
 <template>
   <h2
-    class="ui_title text-[2rem] md:text-[3rem] lg:text-[4rem] leading-none text-dark-blue-main font-din font-bold max-w-[62rem] max-lg:text-center uppercase"
+    class="ui_title text-[2rem] md:text-[3rem] lg:text-[4rem] leading-none text-dark-blue-main font-din font-bold max-w-[68rem] max-lg:text-center uppercase"
   >
     <slot />
   </h2>
