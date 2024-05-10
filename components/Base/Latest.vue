@@ -64,6 +64,15 @@
           <UiCardsBlog :item="item" />
         </li>
       </ul>
+
+      <UiButton
+        color="dark"
+        variant="secondary"
+        to="/blog"
+        class="lg:!hidden w-max max-w-full mx-auto"
+      >
+        All stories
+      </UiButton>
     </div>
   </section>
 </template>
