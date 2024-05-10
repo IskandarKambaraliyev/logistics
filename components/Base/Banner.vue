@@ -17,7 +17,7 @@
 
 <template>
   <div
-    class="relative min-h-[60vh] w-full flex flex-col justify-center md:justify-end pb-8 pt-20 lg:pb-16"
+    class="relative min-h-[60vh] w-full flex flex-col justify-center md:justify-end pb-8 lg:pb-16 pt-40"
   >
     <div
       class="absolute inset-0 before:absolute before:inset-0 before:bg-black/40"
@@ -36,13 +36,13 @@
     </div>
 
     <div class="relative">
-      <div class="container">
+      <div class="container space-y-4">
         <h4
-          class="text-[1.5rem] md:text-[2rem] leading-none uppercase text-[#C3D4E1] font-din font-bold"
+          class="max-md:text-center text-[1.5rem] md:text-[2rem] leading-none uppercase text-[#C3D4E1] font-din font-bold"
         >
           {{ label }}
         </h4>
-        <UiTitle as="h1" class="text-white">{{ title }}</UiTitle>
+        <UiTitle as="h1" class="md:text-left text-white">{{ title }}</UiTitle>
       </div>
     </div>
   </div>

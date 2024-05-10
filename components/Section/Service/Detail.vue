@@ -30,15 +30,15 @@
     }
 
     h1 {
-      @apply text-[2.25rem] md:text-[2.5rem] lg:text-[3rem];
+      @apply text-[2.25rem] md:text-[2.5rem] lg:text-[3rem] leading-none;
     }
 
     h2 {
-      @apply text-[2rem] md:text-[2.25rem] lg:text-[2.5rem];
+      @apply text-[2rem] md:text-[2.25rem] lg:text-[2.5rem] leading-none;
     }
 
     h3 {
-      @apply text-[1.25rem] md:text-[1.5rem] lg:text-[2rem];
+      @apply text-[1.25rem] md:text-[1.5rem] lg:text-[2rem] leading-none;
     }
 
     ul {
