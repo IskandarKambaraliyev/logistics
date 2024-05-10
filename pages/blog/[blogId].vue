@@ -1,6 +1,6 @@
 <script setup>
   const route = useRoute();
-  const blogId = route.value.blogId;
+  const blogId = route.params.blogId;
 </script>
 
 <template>
