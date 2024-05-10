@@ -3,7 +3,7 @@
   import { format } from "date-fns";
   import "v-calendar/dist/style.css";
 
-  const step = ref(1);
+  const step = ref(2);
 
   const form = reactive({
     pickup: "",
@@ -119,7 +119,7 @@
         <div
           class="flex items-start gap-4 text-base md:text-[1.75rem] md:leading-[2.25rem] font-semibold"
         >
-          Get an instant quote or call now
+          <span class="flex-1">Get an instant quote or call now</span>
           <NuxtLink
             to="tel:555-555-5555"
             class="text-blue-main hover:text-blue-700 select-text"
@@ -172,7 +172,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <UiFormGroup label="Year" :required="false" for="main-hero-year">
               <input
-                type="text"
+                type="tel"
                 v-model="form.year"
                 :placeholder="new Date().getFullYear()"
                 :maxLength="4"
@@ -320,7 +320,7 @@
             </UiFormGroup>
             <UiFormGroup label="Phone" for="main-hero-phone">
               <input
-                type="text"
+                type="tel"
                 v-model="form.phone"
                 placeholder="(000) 000-0000"
                 id="main-hero-phone"
