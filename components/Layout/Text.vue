@@ -189,7 +189,7 @@
 
 <template>
   <div
-    class="fixed top-0 left-0 z-text w-full animated-text-wrapper blue-gradient text-white h-6 md:h-10 flex items-center overflow-hidden"
+    class="fixed top-0 left-0 z-text w-full animated-text-wrapper blue-gradient text-white h-8 flex items-center overflow-hidden"
   >
     <div
       class="text-single relative md:py-2 whitespace-nowrap m-0 will-change-transform flex items-center"
@@ -212,7 +212,7 @@
     .text-single {
       .animated-text {
         padding: 0;
-        font-size: 1rem;
+        font-size: 0.75rem;
         line-height: 1.5rem;
         display: inline-block;
         margin-right: 2.5rem;
@@ -232,12 +232,12 @@
         }
 
         @media screen and (max-width: 768px) {
-          font-size: 0.45rem !important;
+          font-size: 0.75rem !important;
           line-height: 150% !important;
 
           &::before {
-            width: 0.25rem !important;
-            height: 0.25rem !important;
+            width: 0.375rem !important;
+            height: 0.375rem !important;
           }
         }
       }

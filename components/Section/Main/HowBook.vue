@@ -114,7 +114,7 @@
             <UiButton color="dark" variant="primary" @click="instant = true">
               Get an instant quote
             </UiButton>
-            <UiButton color="dark" variant="secondary" to="/order">
+            <UiButton color="dark" variant="secondary" to="/contact">
               Check my order
             </UiButton>
           </div>

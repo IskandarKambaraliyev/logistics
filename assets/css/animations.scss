@@ -105,11 +105,11 @@
 }
 
 .content-transform-150-left-enter-active {
-  animation: content-transform-150-left 0.15s ease-in-out;
+  animation: content-transform-150-left 0.15s ease-in-out reverse;
 }
 
 .content-transform-150-left-leave-active {
-  animation: content-transform-150-left 0.15s ease-in-out reverse;
+  animation: content-transform-150-left 0.15s ease-in-out;
 }
 
 /* content transform right 150 */
@@ -125,9 +125,9 @@
 }
 
 .content-transform-150-right-enter-active {
-  animation: content-transform-150-right 0.15s ease-in-out;
+  animation: content-transform-150-right 0.15s ease-in-out reverse;
 }
 
 .content-transform-150-right-leave-active {
-  animation: content-transform-150-right 0.15s ease-in-out reverse;
+  animation: content-transform-150-right 0.15s ease-in-out;
 }

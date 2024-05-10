@@ -77,8 +77,36 @@
     }
   };
 
+  const openDate = ref(false);
+
+  const datePickRef = ref(null);
+  const datePickInput = ref(null);
+
+  onClickOutside(datePickRef, () => {
+    openDate.value = false;
+  });
+
   const handleSubmit = (e) => {
-    console.log(form);
+    if (form.ship_date) {
+      const body = {
+        pickup: form.pickup,
+        delivery: form.delivery,
+        year: form.year,
+        make: form.make,
+        model: form.model,
+        type: form.type,
+        vehicle: form.vehicle,
+        ship_date: format(form.ship_date, "d MMM, yyy"),
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+      };
+
+      console.log(body);
+    } else {
+      datePickInput.value.focus();
+      openDate.value = true;
+    }
   };
 </script>
 
@@ -161,34 +189,28 @@
 
               <div class="flex flex-col gap-6">
                 <div class="form_group-inputs c3">
-                  <div>
-                    <span>*Year</span>
-                    <input
-                      type="text"
+                  <UiFormGroup label="Year" for="instant-year">
+                    <UiFormInput
                       v-model="form.year"
                       :placeholder="new Date().getFullYear()"
-                      maxLength="4"
-                      required
+                      :maxLength="4"
+                      id="instant-year"
                     />
-                  </div>
-                  <div>
-                    <span>*Make</span>
-                    <input
-                      type="text"
+                  </UiFormGroup>
+                  <UiFormGroup label="Make" for="instant-make">
+                    <UiFormInput
                       v-model="form.make"
                       placeholder="Make"
-                      required
+                      id="instant-make"
                     />
-                  </div>
-                  <div>
-                    <span>*Model</span>
-                    <input
-                      type="text"
+                  </UiFormGroup>
+                  <UiFormGroup label="Model" for="instant-model">
+                    <UiFormInput
                       v-model="form.model"
                       placeholder="Model"
-                      required
+                      id="instant-model"
                     />
-                  </div>
+                  </UiFormGroup>
                 </div>
 
                 <div class="form_group-inputs">
@@ -340,74 +362,68 @@
 
               <div class="flex flex-col gap-6">
                 <div class="form_group-inputs">
-                  <div>
-                    <span>*Ship date</span>
-                    <UPopover>
-                      <button
-                        class="input w-full text-left"
-                        :class="
+                  <UiFormGroup label="Ship date" for="instant-ship-date">
+                    <div class="relative" ref="datePickRef">
+                      <input
+                        type="text"
+                        @click="openDate = !openDate"
+                        :value="
                           form.ship_date
-                            ? 'text-dark-blue-main'
-                            : 'text-dark-blue-300'
+                            ? format(form.ship_date, 'd MMM, yyy')
+                            : ''
                         "
-                        type="button"
-                      >
-                        {{
-                          form.ship_date
-                            ? format(form.ship_date, "d MMM, yyy")
-                            : "Ship date"
-                        }}
-                      </button>
+                        :readonly="true"
+                        class="cursor-pointer w-full"
+                        :placeholder="format(today, 'd MMM, yyy')"
+                        id="instant-ship-date"
+                        ref="datePickInput"
+                      />
 
-                      <template #panel="{ close }">
-                        <DatePicker
-                          locale="en"
-                          v-model="form.ship_date"
-                          is-required=""
-                          @dayclick="close"
-                          :min-date="today"
-                          :max-date="
-                            new Date(
-                              today.getFullYear(),
-                              today.getMonth() + 6,
-                              0
-                            )
-                          "
-                        />
-                      </template>
-                    </UPopover>
-                  </div>
-                  <div>
-                    <span>*Name</span>
-                    <input
-                      type="text"
+                      <Transition name="fade-150">
+                        <div v-if="openDate" class="absolute top-full left-0">
+                          <DatePicker
+                            locale="en"
+                            v-model="form.ship_date"
+                            is-required=""
+                            @dayclick="openDate = false"
+                            :min-date="today"
+                            :max-date="
+                              new Date(
+                                today.getFullYear(),
+                                today.getMonth() + 6,
+                                0
+                              )
+                            "
+                          />
+                        </div>
+                      </Transition>
+                    </div>
+                  </UiFormGroup>
+                  <UiFormGroup label="Name" for="instant-name">
+                    <UiFormInput
                       v-model="form.name"
-                      placeholder="Name"
-                      required
-                      autocomplete="name"
+                      placeholder="John Doe"
+                      id="instant-name"
                     />
-                  </div>
+                  </UiFormGroup>
                 </div>
 
                 <div class="form_group-inputs">
-                  <div>
-                    <span>*Email</span>
-                    <input
+                  <UiFormGroup label="Email" for="instant-email">
+                    <UiFormInput
                       type="email"
                       v-model="form.email"
-                      placeholder="Email"
-                      required
+                      placeholder="example@gmail.com"
+                      id="instant-email"
                     />
-                  </div>
-                  <div>
-                    <span>*Phone</span>
-                    <input
-                      type="text"
+                  </UiFormGroup>
+                  <UiFormGroup label="Phone" for="instant-phone">
+                    <UiFormInput
                       v-model="form.phone"
-                      placeholder="Phone"
-                      required
+                      placeholder="(000) 000-0000"
+                      id="instant-phone"
                     />
-                  </div>
+                  </UiFormGroup>
                 </div>
               </div>
             </div>

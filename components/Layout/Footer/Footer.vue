@@ -85,9 +85,7 @@
 <template>
   <div class="border-t border-dark-blue-700 relative">
     <div class="absolute inset-0 z-[-1]">
-      <NuxtImg
-        provider="ipx"
-        :placeholder="[20, 10, 5, 10]"
+      <img
         src="/Earth.svg"
         class="size-full object-cover object-[12%_center]"
       />

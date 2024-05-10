@@ -82,7 +82,7 @@
 <template>
   <header
     ref="header"
-    class="header lg:!hidden fixed top-6 md:top-10 left-0 z-modal w-full py-3 border-b border-white/20 transition"
+    class="header lg:!hidden fixed top-8 left-0 z-modal w-full py-3 border-b border-white/20 transition"
     :class="
       sticky && !open
         ? 'bg-white text-dark-blue-main'
@@ -189,7 +189,7 @@
       v-if="open"
     >
       <div class="wrapper">
-        <Transition name="content-transform-300-left">
+        <Transition name="content-transform-150-left">
           <div class="content_menu" v-if="!contentOpen">
             <div class="main">
               <button class="menu_btn group" @click="toggleContent('work')">
@@ -286,7 +286,7 @@
           </div>
         </Transition>
 
-        <Transition name="content-transform-300-right">
+        <Transition name="content-transform-150-right">
           <LayoutHeaderContent
             v-if="contentOpen"
             :open="contentOpen"

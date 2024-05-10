@@ -58,16 +58,16 @@
 
 <template>
   <header
-    class="header max-lg:!hidden fixed top-10 left-0 z-header w-full py-3 border-b border-white/20 transition"
-    :class="sticky ? 'bg-white text-dark-blue-main' : 'bg-white/10 text-white'"
+    class="header max-lg:!hidden fixed top-8 left-0 z-header w-full py-3 border-b border-white/20 transition"
+    :class="sticky ? 'bg-white text-dark-blue-main shadow-xl' : 'bg-white/10 text-white'"
     style="backdrop-filter: blur(150px)"
     ref="header"
   >
     <div class="container min-h-14 flex items-center justify-between gap-12">
-      <div class="flex items-center gap-12">
+      <div class="flex items-center gap-4 xl:gap-12">
         <LayoutHeaderLogo :sticky="sticky" />
 
-        <div class="flex items-center gap-4">
+        <div class="flex items-center xl:gap-4">
           <div
             @mouseenter="handleHover('work')"
             @mouseleave="handleHover(null)"
@@ -234,7 +234,8 @@
         <UiButton
           variant="secondary"
           :color="sticky ? 'dark' : 'light'"
-          to="/order"
+          to="/contact"
+          class="max-xl:!hidden"
         >
           Check my order
         </UiButton>

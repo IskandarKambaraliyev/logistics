@@ -33,7 +33,7 @@ module.exports = {
         "shadow-btn": "0 0.25rem 2rem #00847A80",
       },
       screens: {
-        xl: "1600px",
+        xl: "1550px",
         lg: "1280px",
         md: "768px",
       },

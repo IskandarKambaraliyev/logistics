@@ -71,7 +71,7 @@
       <Transition name="fade-300">
         <ComboboxOptions
           v-if="data"
-          class="bg-white absolute top-full left-0 w-full rounded-[1rem] shadow-2xl overflow-hidden"
+          class="bg-white absolute z-header-1 top-full left-0 w-full rounded-[1rem] shadow-2xl overflow-hidden"
         >
           <div class=" max-h-[50vh] py-2 overflow-y-auto custom-scrollbar">
             <div
