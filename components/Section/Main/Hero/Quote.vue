@@ -3,7 +3,7 @@
   import { format } from "date-fns";
   import "v-calendar/dist/style.css";
 
-  const step = ref(2);
+  const step = ref(1);
 
   const form = reactive({
     pickup: "",
