@@ -74,8 +74,7 @@
     facebook: "#!",
     telegram: "#!",
     linkedin: "#!",
-    youtube: "#!",
-    // instagram: "#!",
+    instagram: "#!",
   };
 
   const map =

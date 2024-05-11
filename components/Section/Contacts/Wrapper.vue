@@ -3,7 +3,7 @@
 <template>
   <div class="py-[4.5rem] lg:py-20 bg-blue-dark text-white relative">
     <div
-      class="container relative grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-16"
+      class="container relative z-[1] grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-16"
     >
       <SectionContactsForm />
       <SectionContacts />
