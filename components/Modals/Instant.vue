@@ -105,23 +105,40 @@
     }
   };
 
+  const hasError = ref(false);
+  const phoneError = computed(() => {
+    return form.phone.length === 14;
+  });
+
+  const checkFields = () => {
+    if (form.phone.length < 14) {
+      hasError.value = true;
+      return true;
+    } else {
+      hasError.value = false;
+      return false;
+    }
+  };
+
   const handleSubmit = (e) => {
     if (form.ship_date) {
-      const body = {
-        pickup: form.pickup,
-        delivery: form.delivery,
-        year: form.year,
-        make: form.make,
-        model: form.model,
-        type: form.type,
-        vehicle: form.vehicle,
-        ship_date: format(form.ship_date, "d MMM, yyy"),
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-      };
+      if (!checkFields()) {
+        const body = {
+          pickup: form.pickup,
+          delivery: form.delivery,
+          year: form.year,
+          make: form.make,
+          model: form.model,
+          type: form.type,
+          vehicle: form.vehicle,
+          ship_date: format(form.ship_date, "d MMM, yyy"),
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+        };
 
-      console.log(body);
+        console.log(body);
+      }
     } else {
       datePickInput.value.focus();
       openDate.value = true;
@@ -338,12 +355,9 @@
                       id="instant-phone"
                       @input="handlePhone"
                       maxlength="14"
+                      required
+                      :class="{ '!ring-red-500': !phoneError && hasError }"
                     />
-                    <!-- <UiFormInput
-                      v-model="form.phone"
-                      placeholder="(000) 000-0000"
-                      id="instant-phone"
-                    /> -->
                   </UiFormGroup>
                 </div>
               </div>

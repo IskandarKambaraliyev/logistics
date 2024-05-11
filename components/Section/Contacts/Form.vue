@@ -1,13 +1,123 @@
 <script setup>
+  const form = reactive({
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
 
+  const handlePhone = () => {
+    let inputVal = form.phone.replace(/\D/g, "");
+
+    if (inputVal.length > 12) {
+      inputVal = inputVal.substring(0, 10);
+    }
+
+    if (inputVal.length <= 3) {
+      form.phone = `(${inputVal}`;
+    } else if (inputVal.length <= 6) {
+      form.phone = `(${inputVal.substring(0, 3)}) ${inputVal.substring(3)}`;
+    } else {
+      form.phone = `(${inputVal.substring(0, 3)}) ${inputVal.substring(
+        3,
+        6
+      )}-${inputVal.substring(6)}`;
+    }
+  };
+
+  const hasError = ref(false);
+  const phoneError = computed(() => {
+    return form.phone.length === 14;
+  });
+
+  const checkFields = () => {
+    if (form.phone.length < 14) {
+      hasError.value = true;
+      return true;
+    } else {
+      hasError.value = false;
+      return false;
+    }
+  };
+
+  const handleSubmit = () => {
+    if (!checkFields()) {
+      console.log(form);
+    } else {
+      console.log("Error");
+    }
+  };
 </script>
 
 <template>
-  <div>
-    Form
+  <div class="contact_form">
+    <form
+      class="lg:max-w-[80%] w-full flex flex-col gap-6"
+      @submit.prevent="handleSubmit"
+    >
+      <UiFormGroup label="Name" for="contact-name">
+        <input
+          v-model="form.name"
+          type="text"
+          class="input"
+          id="contact-name"
+          placeholder="John Doe"
+          required
+        />
+      </UiFormGroup>
+
+      <UiFormGroup label="Email" for="contact-email">
+        <input
+          v-model="form.email"
+          type="email"
+          class="input"
+          id="contact-email"
+          placeholder="example@gmail.com"
+          required
+        />
+      </UiFormGroup>
+
+      <UiFormGroup label="Phone number" for="contact-phone">
+        <input
+          class="input"
+          :class="{ '!ring-red-500': !phoneError && hasError }"
+          type="text"
+          v-model="form.phone"
+          placeholder="(000) 000-0000"
+          id="contact-phone"
+          @input="handlePhone"
+          maxlength="14"
+          required
+        />
+      </UiFormGroup>
+
+      <UiFormGroup label="Subject" for="contact-subject">
+        <UiFormSubject v-model="form.subject" />
+      </UiFormGroup>
+
+      <UiFormGroup label="Message" for="contact-message">
+        <textarea
+          class="input resize-none h-80 !rounded-[1.5rem]"
+          type="text"
+          v-model="form.message"
+          placeholder="Hello, I would like to know more about your services."
+          id="contact-message"
+          required
+        />
+      </UiFormGroup>
+
+      <UiButton type="submit" variant="primary" color="white">
+        Send message
+      </UiButton>
+    </form>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
+  .contact_form {
+    .input {
+      @apply py-4 px-5 bg-white/10 rounded-full outline-none w-full text-base text-white placeholder:text-[#8CBBE1] ring-1 ring-transparent hover:ring-white/50 focus:ring-white transition-all;
+    }
+  }
 </style>

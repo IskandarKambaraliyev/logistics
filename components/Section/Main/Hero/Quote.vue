@@ -80,6 +80,21 @@
     step.value = 4;
   };
 
+  const hasError = ref(false);
+  const phoneError = computed(() => {
+    return form.phone.length === 14;
+  });
+
+  const checkFields = () => {
+    if (form.phone.length < 14) {
+      hasError.value = true;
+      return true;
+    } else {
+      hasError.value = false;
+      return false;
+    }
+  };
+
   const handleStep4 = () => {
     if (!form.pickup || !form.delivery) {
       step.value = 1;
@@ -90,7 +105,7 @@
     } else if (!form.ship_date) {
       datePickInput.value.focus();
       openDate.value = true;
-    } else {
+    } else if (!checkFields()) {
       const body = {
         pickup: form.pickup,
         delivery: form.delivery,
@@ -327,6 +342,7 @@
                 @input="handlePhone"
                 maxlength="14"
                 class="input"
+                :class="{ '!ring-red-500': !phoneError && hasError }"
               />
             </UiFormGroup>
           </div>
