@@ -28,10 +28,10 @@
         format="webp"
         :placeholder="[30, 10, 5, 10]"
         width="1920"
-        height="648"
+        height="1080"
         :src="props?.image"
         alt="Banner Image"
-        class="size-full object-cover"
+        class="size-full object-cover object-top"
       />
     </div>
 
