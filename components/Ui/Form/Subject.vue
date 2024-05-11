@@ -64,7 +64,7 @@
       <div class="relative">
         <ComboboxInput
           id="contact-subject"
-          class="py-4 px-5 bg-white/10 rounded-full outline-none w-full text-base text-white placeholder:text-[#8CBBE1] ring-1 ring-transparent hover:ring-white/50 focus:ring-white transition-all"
+          class="py-4 px-5 pr-14 bg-white/10 rounded-full outline-none w-full text-base text-white placeholder:text-[#8CBBE1] ring-1 ring-transparent hover:ring-white/50 focus:ring-white transition-all"
           :displayValue="
             (subject) => {
               handleUpdate(subject.name);

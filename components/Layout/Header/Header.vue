@@ -4,6 +4,8 @@
 
   const { width } = useWindowSize();
 
+  const route = useRoute();
+
   const instant = useInstant();
 
   const openInstant = () => {
@@ -77,6 +79,14 @@
       clearContent();
     }
   });
+
+  watch(
+    () => route.fullPath,
+    () => {
+      open.value = false;
+      clearContent();
+    }
+  );
 </script>
 
 <template>
