@@ -1,6 +1,6 @@
 <script setup>
   const image =
-    "https://i.ibb.co/F4X55G1/bf6a077ecd0da03bbb79088afbf7772f-Expires-1716163200-Key-Pair-Id-APKAQ4-GOSFWCVNEHN3-O4-Signature-BG5.png";
+    "https://express-auto-carriers.vercel.app/contact.png";
 </script>
 
 <template>
