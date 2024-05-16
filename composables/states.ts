@@ -13,3 +13,8 @@ export const useVideoModal = () =>
     open: false,
     src: null,
   }));
+
+export const useUSMap = () =>
+  useState(() => ({
+    state: "newyork",
+  }));

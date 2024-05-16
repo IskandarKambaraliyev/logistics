@@ -7,6 +7,7 @@
   <SectionMainCost />
   <SectionMainBrands />
   <SectionMainServices />
+  <SectionMainMap />
   <SectionMainReviews />
   <SectionMainFaq />
   <BaseLatest />
