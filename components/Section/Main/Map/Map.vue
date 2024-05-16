@@ -27,7 +27,10 @@
       class="relative w-full md:absolute md:top-1/2 md:left-0 md:max-w-[37rem] md:w-1/2 md:-translate-y-1/2 z-[1]"
       ref="content"
     >
-      <div class="container">
+      <div class="container space-y-8">
+        <UiTitle class="w-max max-w-full lg:max-w-[68rem]">
+          Car transport anywhere in the U.S.
+        </UiTitle>
         <SectionMainMapCards />
       </div>
     </div>

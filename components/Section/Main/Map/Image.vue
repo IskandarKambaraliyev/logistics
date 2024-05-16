@@ -20,12 +20,12 @@
     }
   });
 
-  watch(
-    () => map.value.state,
-    (val) => {
-      console.log(val);
-    }
-  );
+  // watch(
+  //   () => map.value.state,
+  //   (val) => {
+  //     console.log(val);
+  //   }
+  // );
 </script>
 
 <template>

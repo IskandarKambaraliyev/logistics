@@ -16,5 +16,5 @@ export const useVideoModal = () =>
 
 export const useUSMap = () =>
   useState(() => ({
-    state: "newyork",
+    state: "california",
   }));
