@@ -1,10 +1,12 @@
 <script setup>
+  import { useElementBounding } from "@vueuse/core";
+
   const map = useUSMap();
 
-  const newyork = ref(false);
-  const florida = ref(false);
-  const texas = ref(false);
-  const california = ref(false);
+  // const newyork = ref(false);
+  // const florida = ref(false);
+  // const texas = ref(false);
+  // const california = ref(false);
 
   const handleChange = (val) => {
     map.value.state = val;
@@ -13,12 +15,6 @@
   const check = (val) => {
     return map.value.state === val;
   };
-
-  onMounted(() => {
-    if (newyork.value) {
-      console.log(newyork.value.clientHeight);
-    }
-  });
 
   // watch(
   //   () => map.value.state,
@@ -485,6 +481,7 @@
         id="california"
         @click="handleChange('california')"
         class="cursor-pointer"
+        ref="california"
       >
         <g filter="url(#filter32_d_274_137)">
           <path
@@ -507,7 +504,12 @@
           stroke-dasharray="4 4"
         />
       </g>
-      <g id="florida" @click="handleChange('florida')" class="cursor-pointer">
+      <g
+        id="florida"
+        @click="handleChange('florida')"
+        class="cursor-pointer"
+        ref="florida"
+      >
         <g filter="url(#filter33_d_274_137)">
           <path
             d="M666 688C682.016 688 695 675.016 695 659C695 642.984 682.016 630 666 630C649.984 630 637 642.984 637 659C637 675.016 649.984 688 666 688Z"
@@ -530,7 +532,12 @@
           stroke-dasharray="4 4"
         />
       </g>
-      <g id="texas" @click="handleChange('texas')" class="cursor-pointer">
+      <g
+        id="texas"
+        @click="handleChange('texas')"
+        class="cursor-pointer"
+        ref="texas"
+      >
         <g filter="url(#filter34_d_274_137)">
           <path
             d="M530 669C546.016 669 559 656.016 559 640C559 623.984 546.016 611 530 611C513.984 611 501 623.984 501 640C501 656.016 513.984 669 530 669Z"
@@ -553,7 +560,12 @@
           stroke-dasharray="4 4"
         />
       </g>
-      <g id="newyork" @click="handleChange('newyork')" class="cursor-pointer">
+      <g
+        id="newyork"
+        @click="handleChange('newyork')"
+        class="cursor-pointer"
+        ref="newyork"
+      >
         <g filter="url(#filter35_d_274_137)">
           <path
             d="M695 573C711.016 573 724 560.016 724 544C724 527.984 711.016 515 695 515C678.984 515 666 527.984 666 544C666 560.016 678.984 573 695 573Z"
