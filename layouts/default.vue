@@ -2,7 +2,7 @@
 
 <template>
   <LayoutText />
-  <LayoutHeaderDesktop />
+  <LayoutHeaderDesktopHeader />
   <LayoutHeader />
   <ModalsInstant />
   <main class="text-dark-blue-main">
