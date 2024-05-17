@@ -2,7 +2,7 @@
   const props = defineProps({
     open: {
       type: Boolean,
-      required: true,
+      required: false,
     },
     content: {
       type: Array,

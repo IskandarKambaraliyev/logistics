@@ -6,7 +6,7 @@
     },
     open: {
       type: Boolean,
-      required: true,
+      required: false,
     },
   });
 

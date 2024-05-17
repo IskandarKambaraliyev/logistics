@@ -3,8 +3,6 @@
 
   const { data, error } = await useMyFetch(`/menu`);
 
-  console.log(data.value);
-
   const { width } = useWindowSize();
 
   const route = useRoute();
