@@ -49,14 +49,9 @@
     hovered.value = e;
   };
 
-  const workBtn = ref(null);
-  const individualsBtn = ref(null);
-  const businessBtn = ref(null);
-  const chooseBtn = ref(null);
-
   const { data, error } = await useMyFetch(`/menu`);
 
-  console.log(data.value);
+  // console.log(data.value);
 </script>
 
 <template>

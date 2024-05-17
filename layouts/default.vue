@@ -1,9 +1,10 @@
-<script setup></script>
+<script setup>
+</script>
 
 <template>
   <LayoutText />
   <LayoutHeaderDesktopHeader />
-  <LayoutHeader />
+  <LayoutHeaderMobileHeader />
   <ModalsInstant />
   <main class="text-dark-blue-main">
     <slot />

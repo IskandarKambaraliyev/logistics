@@ -1,6 +1,9 @@
 <script setup>
-  import { links as data } from "~/data/header.js";
   import { useWindowSize } from "@vueuse/core";
+
+  const { data, error } = await useMyFetch(`/menu`);
+
+  console.log(data.value);
 
   const { width } = useWindowSize();
 
@@ -51,10 +54,10 @@
   };
 
   const toggleContent = (val) => {
-    if (currentContent.value !== val) {
+    if (currentContent.value !== val && data.value.results) {
       contentOpen.value = true;
-      currentContent.value = data[val];
-      contentFor.value = val;
+      currentContent.value = data.value.results[val];
+      contentFor.value = data.value.results[val]?.title;
     } else {
       clearContent();
     }
@@ -202,87 +205,27 @@
         <Transition name="content-transform-150-left">
           <div class="content_menu" v-if="!contentOpen">
             <div class="main">
-              <button class="menu_btn group" @click="toggleContent('work')">
-                <span class="menu_btn-label font-euclid">How it works</span>
-                <svg
-                  width="1rem"
-                  height="1rem"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="menu_btn-icon"
-                >
-                  <path
-                    d="M6 3L11 8L6 13"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <button
-                class="menu_btn group"
-                @click="toggleContent('individuals')"
+              <NuxtLink
+                v-for="(item, index) in data.results"
+                :key="index"
+                :to="!item.children && item.link"
+                class="menu_btn group cursor-pointer"
+                @click="
+                  () => {
+                    if (item.children) {
+                      toggleContent(index);
+                    }
+                  }
+                "
               >
-                <span class="menu_btn-label font-euclid">For indviduals</span>
-                <svg
-                  width="1rem"
-                  height="1rem"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="menu_btn-icon"
-                >
-                  <path
-                    d="M6 3L11 8L6 13"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <button class="menu_btn group" @click="toggleContent('business')">
-                <span class="menu_btn-label font-euclid">For business</span>
-                <svg
-                  width="1rem"
-                  height="1rem"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="menu_btn-icon"
-                >
-                  <path
-                    d="M6 3L11 8L6 13"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <button class="menu_btn group" @click="toggleContent('choose')">
-                <span class="menu_btn-label font-euclid">Why choose us?</span>
-                <svg
-                  width="1rem"
-                  height="1rem"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="menu_btn-icon"
-                >
-                  <path
-                    d="M6 3L11 8L6 13"
-                    stroke="white"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-              <NuxtLink to="/contact" class="menu_btn group">
-                <span class="menu_btn-label font-euclid">Contact Us</span>
+                <span class="menu_btn-label font-euclid">{{ item.title }}</span>
+
+                <UIcon
+                  v-if="item.children"
+                  name="i-heroicons-chevron-right-20-solid"
+                  class="size-6"
+                  dynamic
+                />
               </NuxtLink>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pb-24">
@@ -297,7 +240,7 @@
         </Transition>
 
         <Transition name="content-transform-150-right">
-          <LayoutHeaderContent
+          <LayoutHeaderMobileContent
             v-if="contentOpen"
             :open="contentOpen"
             :content="currentContent"

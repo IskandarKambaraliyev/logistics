@@ -2,8 +2,7 @@
   const instant = useInstant();
   const video = useVideoModal();
 
-  const image =
-    "https://s3-alpha-sig.figma.com/img/77bd/d63e/62ba19e8ac77daddcb492d11be3bc6d3?Expires=1715558400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=mbTP7~1Wa4rq6o8k2RFBqu6m5eNLJBCWe68debzZbtsEbl~hCh54gd1WAzduCyZ4NSYsRAyFB2x92mNs~iMn0zzBoiA6WaQbysT90~3T~fhLnjA-m2OR6uLC4dbbbsOnelZXo9sjBUktbXDvRV1wk1AEP014Y4y2i3FGWJCkhbu0QjFfDgKl2vZOQBod~-G0HtRYX58U5Cy4wFSiwLkVVPAhxDJ1hG4Nls~wNg3ivVuLx2b6ch~9TkLeOa0hXvn60oYa385RZJ20apx3hRQQdEySf9pO6zWUFygqeH4ROHqmkuu2tmHgkZFcSunQxZY7-tPTEVJTpPhHfZJyV-kEBw__";
+  const image = "https://cp.express-auto-carriers.com/media/slides/howbook.png";
 
   const steps = [
     {
