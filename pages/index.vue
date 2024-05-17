@@ -3,7 +3,7 @@
 <template>
   <SectionMainHero />
   <SectionMainHowBook />
-  <SectionMainWhyBook />
+  <SectionMainAdvantages />
   <SectionMainCost />
   <SectionMainBrands />
   <SectionMainServices />
