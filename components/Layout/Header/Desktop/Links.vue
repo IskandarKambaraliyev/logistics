@@ -9,6 +9,12 @@
       required: true,
     },
   });
+
+  const allChildrenEmpty = computed(() => {
+    return props.data.every(
+      (item) => !item.children || item.children.length === 0
+    );
+  });
 </script>
 
 <template>
@@ -21,7 +27,7 @@
         }"
       >
         <div class="py-6 max-h-[70vh] h-auto overflow-auto custom-scrollbar">
-          <div class="flex flex-row gap-4 divide-x divide-dark-blue-000">
+          <div class="flex flex-row gap-4 divide-x divide-dark-blue-000" :class="{'flex-col': allChildrenEmpty}">
             <div
               v-for="(item, index) in data.slice(0, data.length)"
               :key="index"
@@ -42,7 +48,15 @@
                 </span>
               </NuxtLink>
 
-              <div v-if="item.children" class="flex flex-col gap-6" :class="`${data.length < 3 && item.children.length > 5 ? 'grid grid-cols-2 gap-6' : ''}`">
+              <div
+                v-if="item.children"
+                class="flex flex-col gap-6"
+                :class="`${
+                  data.length < 3 && item.children.length > 5
+                    ? 'grid grid-cols-2 gap-6'
+                    : ''
+                }`"
+              >
                 <NuxtLink
                   v-for="(child, i) in item.children"
                   :key="i"

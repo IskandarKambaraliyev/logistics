@@ -19,7 +19,8 @@
   });
 
   const current = ref(null);
-  const currentThrottled = ref(null);
+  const currentThrottled = ref("");
+  const show = ref(false);
 
   const emit = defineEmits(["update:modelValue"]);
 
@@ -36,7 +37,7 @@
   );
 
   const { data, error } = await useFetch(
-    () => `/api/zipcode?search=${currentThrottled.value}`
+    () => `/api/zipcode?limit=50&search=${currentThrottled.value}`
   );
 
   if (error.value) {
@@ -58,6 +59,8 @@
         @change="current = $event.target.value"
         class="py-4 px-5 rounded-full outline-none ring-1 ring-dark-blue-000 focus:ring-blue-500 w-full text-[0.875rem] md:text-[1rem] leading-6 placeholder:text-dark-blue-300"
         :placeholder="placeholder"
+        @focus="show = true"
+        @blur="show = false"
         :displayValue="
           (item) => {
             // handleUpdate(`${item.city}, ${item.state}, ${item.zip_code}`);
@@ -70,10 +73,11 @@
       />
       <Transition name="fade-300">
         <ComboboxOptions
-          v-if="data"
+          static
+          v-if="show"
           class="bg-white absolute z-header-1 top-full left-0 w-full rounded-[1rem] shadow-2xl overflow-hidden"
         >
-          <div class=" max-h-[50vh] py-2 overflow-y-auto custom-scrollbar">
+          <div class="max-h-[50vh] py-2 overflow-y-auto custom-scrollbar">
             <div
               v-if="data.results?.length === 0"
               class="relative cursor-default select-none px-4 py-2 text-gray-700"
