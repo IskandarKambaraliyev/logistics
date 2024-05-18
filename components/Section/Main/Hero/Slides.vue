@@ -11,7 +11,7 @@
   const modules = [Autoplay, EffectFade, Pagination];
 
   const autoplayConfig = {
-    delay: 5000,
+    delay: 10000,
     disableOnInteraction: false,
     pauseOnMouseEnter: false,
   };

@@ -54,7 +54,7 @@
 
 <template>
   <div class="relative">
-    <Combobox>
+    <Combobox v-slot="{ open }">
       <ComboboxInput
         @change="current = $event.target.value"
         class="py-4 px-5 rounded-full outline-none ring-1 ring-dark-blue-000 focus:ring-blue-500 w-full text-[0.875rem] md:text-[1rem] leading-6 placeholder:text-dark-blue-300"
@@ -63,8 +63,6 @@
         @blur="show = false"
         :displayValue="
           (item) => {
-            // handleUpdate(`${item.city}, ${item.state}, ${item.zip_code}`);
-            //  current = `${item.city}, ${item.state}, ${item.zip_code}`;
             handleUpdate(`${item.city}, ${item.state}, ${item.zip_code}`);
             return `${item.city}, ${item.state}, ${item.zip_code}`;
           }
@@ -74,7 +72,7 @@
       <Transition name="fade-300">
         <ComboboxOptions
           static
-          v-if="show"
+          v-if="(!modelValue && show) || open"
           class="bg-white absolute z-header-1 top-full left-0 w-full rounded-[1rem] shadow-2xl overflow-hidden"
         >
           <div class="max-h-[50vh] py-2 overflow-y-auto custom-scrollbar">
