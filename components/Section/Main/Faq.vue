@@ -1,47 +1,20 @@
 <script setup>
-  const data = [
-    {
-      id: 1,
-      question: "How does car transport work?",
-      answer:
-        "Car transport typically involves hiring a professional auto transport company to move your vehicle from one location to another. The process usually begins with scheduling the transportation and providing necessary details about the vehicle. The transport company then picks up the car, either using an open or enclosed carrier, depending on the level of protection desired. The vehicle is securely loaded onto the carrier and transported to its destination, where it is unloaded and delivered to the specified location.",
-    },
-    {
-      id: 2,
-      question: "What types of vehicles do you transport?",
-      answer:
-        "Auto transport companies typically transport various types of vehicles, including cars, trucks, SUVs, motorcycles, boats, and even RVs.",
-    },
-    {
-      id: 3,
-      question: "How long does it take to transport a car?",
-      answer:
-        "The time it takes to transport a car depends on factors such as the distance, location, and the specific services chosen. Generally, transportation within the same country can take anywhere from a few days to a couple of weeks.",
-    },
-    {
-      id: 4,
-      question: "Is my vehicle insured during transport?",
-      answer:
-        "Yes, reputable auto transport companies usually provide insurance coverage for your vehicle during transport. It's essential to confirm the details of the insurance policy with the transport company before booking.",
-    },
-    {
-      id: 5,
-      question: "How do I prepare my vehicle for transport?",
-      answer:
-        "To prepare your vehicle for transport, you should: Remove all personal belongings from the car. Clean the vehicle and take note of any existing damage. Secure or remove any loose parts or accessories. Ensure that the gas tank is around a quarter full. Disable the car alarm.",
-    },
-    {
-      id: 6,
-      question: "Can I track the status of my vehicle during transport?",
-      answer:
-        "Many auto transport companies offer tracking services that allow you to monitor the status of your vehicle during transport. You can typically track your vehicle online or through mobile apps provided by the transport company.",
-    },
-  ];
+  const { data, error } = await useMyFetch(`/faq/`);
+
+  if (error.value) {
+    throw createError({
+      statusCode: error.value.statusCode,
+      message: error.value.message,
+    });
+  }
 </script>
 
 <template>
   <section>
-    <div class="container grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-[15rem]">
+    <div
+      class="container grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-[15rem]"
+      v-if="data?.results"
+    >
       <div class="lg:col-span-1 flex flex-col gap-4">
         <UiTitle>FAQ</UiTitle>
 
@@ -74,7 +47,7 @@
         color="white"
         variant="soft"
         size="md"
-        :items="data"
+        :items="data.results"
         class="lg:col-span-2 gap-3 main_faq_list"
         :ui="{
           item: {
