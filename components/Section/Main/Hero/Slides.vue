@@ -17,7 +17,6 @@
   };
 
   const { data, error } = await useMyFetch(`/slides/`);
-  console.log(data.value);
 
   if (error.value) {
     throw createError({

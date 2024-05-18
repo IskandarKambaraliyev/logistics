@@ -7,79 +7,12 @@
   import "swiper/css";
   import "swiper/css/pagination";
 
-  const data = {
-    overal: "5.00",
-    total: "200",
-    feedbacks: [
-      {
-        id: 1,
-        content:
-          "As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, you’re allowing our team of experts to handle every step of the process, ensuring there are no speed bumps along the way.",
-        user: {
-          name: "Bastian Schweinsteiger",
-          position: "CEO of Tesla",
-          image:
-            "https://s3-alpha-sig.figma.com/img/70e0/a363/f2e8a7963bcd71d49d6e8479fc8850bf?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Yi5iul3QUQX1DD3pBP8lp3jcgkczgEe1j90IMddoVtud1PmnpFLphxIAK1b1PDPq~m1ltPM5butccilNPlj50AR1AMrfCktW1aC3LeaVwXnPG0tk2PpcDaw5~-w0WknsCsDNCpP7X-6fKRXjG1kE-xSli8~dUoRZ9O27QNGVHXuPmbEcXNYaAOb3Kko0OVWoM7JiWsg9R38PF6KfMJVuXit-nW-acnvFfJ8RfbR0wRVeXx9AqmnelKXL8pJBbDo7iPMvLau6~dxngBGiv0s2vcl9iVgtrWsOzmLUPH6yFgvgn35NSEUjq3bmG7MbU8vkuiae2x0frqrs~r42cTkrTA__",
-        },
-        rating: 5,
-      },
-      {
-        id: 2,
-        content:
-          "As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, ",
-        user: {
-          name: "CHI XAN SZU",
-          position: "CEO of something",
-          image:
-            "https://s3-alpha-sig.figma.com/img/c6de/7445/64812a7f79946f13a5afc0dd1872510b?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jT9ZZU6dcx4ViVGjLKT2KIt6C-3cOaJNMYkzwWIcwtJy7zZISn8KPP5Rk7eoCcOoYtOYZG~RBocp4E5F6wAdyhcjI4n1qVsjZUFX-gH8PAU1sEBis63Z~HHy9wWT3wis8-pSebnSN8lG8J1-neYFZ6sfum~KTpUcrRt35H-MVatWHdI6t~mZnLSfH54in1LXqOK-rgaEBkLeRQK~dKWhgPQtqFlU~p2Lfy8pNbHX5yUqmQE0hUBG1vWLM8Y5AqiKMRVeLOee8uwwGZrWMp9nodQqbAhPGTs7Ez41KQnuQU9DWuH-rR8j~8fLah2-n-1PDV6sfAGg4OeeGcjgBMzGOQ__",
-        },
-        rating: 4,
-      },
-      {
-        id: 3,
-        content:
-          "As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, you’re allowing our team of experts to handle every step of the process, ensuring there are no speed bumps along the way.As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, ",
-        user: {
-          name: "SAM kotler",
-          position: "CEO of something",
-          image:
-            "https://s3-alpha-sig.figma.com/img/4ec8/5e72/83b2aa42b854c2f59328ca0514e0dbd4?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pEbGa68PgqUtZXnBEMO9xCjSQ7ik3RA2586R7wYHPsqninxsiMN6mGqSSOHIZj7NLMSwV5urtVpkQqjLHEyRIf10D7ISaAWJDGuVowcLq9b0g4Wqi1gdUieQDKtBrONo18ddXJhr49r8ImvzVrPn4Vc2YEvQ8CozYL1RTwIBWhpjjAKQ5rAcsXn~MqodOB1oMWmxUV66K2vRdn7iGohcBJmXBh4X8~-uFDkHsu8zS4eVte~UcREZDiGoCSReYmjUNASSbuG-PM9D2pTsI9oVOjUTXVtLpB402wsPK2n4BB4jdv4gJ~NQEzs~jm3-tqvUdshnaOeTtHij3V4ZaFpBlw__",
-        },
-        rating: 5,
-      },
-      {
-        id: 4,
-        content:
-          "As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, ",
-        user: {
-          name: "CHI XAN SZU",
-          position: "CEO of something",
-          image:
-            "https://s3-alpha-sig.figma.com/img/c6de/7445/64812a7f79946f13a5afc0dd1872510b?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jT9ZZU6dcx4ViVGjLKT2KIt6C-3cOaJNMYkzwWIcwtJy7zZISn8KPP5Rk7eoCcOoYtOYZG~RBocp4E5F6wAdyhcjI4n1qVsjZUFX-gH8PAU1sEBis63Z~HHy9wWT3wis8-pSebnSN8lG8J1-neYFZ6sfum~KTpUcrRt35H-MVatWHdI6t~mZnLSfH54in1LXqOK-rgaEBkLeRQK~dKWhgPQtqFlU~p2Lfy8pNbHX5yUqmQE0hUBG1vWLM8Y5AqiKMRVeLOee8uwwGZrWMp9nodQqbAhPGTs7Ez41KQnuQU9DWuH-rR8j~8fLah2-n-1PDV6sfAGg4OeeGcjgBMzGOQ__",
-        },
-        rating: 4,
-      },
-      {
-        id: 5,
-        content:
-          "As a top-rated auto transport company, you can have confidence your vehicle will be transported safely. When shipping your vehicle, ",
-        user: {
-          name: "CHI XAN SZU",
-          position: "CEO of something",
-          image:
-            "https://s3-alpha-sig.figma.com/img/c6de/7445/64812a7f79946f13a5afc0dd1872510b?Expires=1716163200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jT9ZZU6dcx4ViVGjLKT2KIt6C-3cOaJNMYkzwWIcwtJy7zZISn8KPP5Rk7eoCcOoYtOYZG~RBocp4E5F6wAdyhcjI4n1qVsjZUFX-gH8PAU1sEBis63Z~HHy9wWT3wis8-pSebnSN8lG8J1-neYFZ6sfum~KTpUcrRt35H-MVatWHdI6t~mZnLSfH54in1LXqOK-rgaEBkLeRQK~dKWhgPQtqFlU~p2Lfy8pNbHX5yUqmQE0hUBG1vWLM8Y5AqiKMRVeLOee8uwwGZrWMp9nodQqbAhPGTs7Ez41KQnuQU9DWuH-rR8j~8fLah2-n-1PDV6sfAGg4OeeGcjgBMzGOQ__",
-        },
-        rating: 4,
-      },
-    ],
-  };
-
   const modules = [Autoplay];
 
   const autoplayConfig = {
     delay: 5000,
     disableOnInteraction: false,
-    pauseOnMouseEnter: false,
+    pauseOnMouseEnter: true,
   };
 
   const breakpoints = {
@@ -108,6 +41,15 @@
       spaceBetween: 16,
     },
   };
+
+  const { data, error } = await useMyFetch(`/reviews/`);
+
+  if (error.value) {
+    throw createError({
+      statusCode: error.value.statusCode,
+      message: error.value.message,
+    });
+  }
 </script>
 
 <template>
@@ -140,7 +82,8 @@
             <h6
               class="text-[4rem] md:text-[6rem] lg:text-[10rem] leading-none font-din font-bold"
             >
-              {{ data.overal }}
+              <!-- {{ data.overal }} -->
+              5
             </h6>
             <span
               class="text-[1rem] lg:text-[1.25rem] leading-normal font-medium mb-4"
@@ -182,7 +125,7 @@
             <h6
               class="text-[4rem] md:text-[6rem] lg:text-[10rem] leading-none font-din font-bold"
             >
-              {{ data.total }}+
+              {{ data.count }}+
             </h6>
             <span
               class="text-[1rem] lg:text-[1.25rem] leading-normal font-medium mb-4"
@@ -200,13 +143,17 @@
         :autoplay="autoplayConfig"
         class="main_reviews_swiper"
       >
-        <swiper-slide v-for="item in data.feedbacks" :key="item.id">
+        <swiper-slide v-for="item in data.results" :key="item.id">
           <div
             class="flex-1 flex flex-col gap-4 lg:gap-5 p-6 rounded-[1.5rem] md:rounded-[2rem] border border-dark-blue-000 h-full justify-between"
           >
             <div class="flex flex-col gap-2 lg:gap-2">
               <div class="flex items-center">
-                <div v-for="(star, index) in 5" :key="index" class="size-4 lg:size-6">
+                <div
+                  v-for="(star, index) in 5"
+                  :key="index"
+                  class="size-4 lg:size-6"
+                >
                   <svg
                     width="2rem"
                     height="2rem"
@@ -219,7 +166,7 @@
                       <path
                         d="M19.2401 13.3334L16.0001 2.66675L12.7601 13.3334H2.66675L10.9067 19.2134L7.77341 29.3334L16.0001 23.0801L24.2401 29.3334L21.1067 19.2134L29.3334 13.3334H19.2401Z"
                         :class="
-                          index < item.rating
+                          index < item.stars_count
                             ? 'fill-yellow-main'
                             : 'fill-dark-blue-100'
                         "
@@ -234,7 +181,9 @@
                 </div>
               </div>
 
-              <div class="line-clamp-4 text-[0.875rem] leading-5">{{ item.content }}</div>
+              <div class="line-clamp-4 text-[0.875rem] leading-5">
+                {{ item.review_text }}
+              </div>
             </div>
 
             <div class="flex items-center gap-2 lg:gap-5">
@@ -245,8 +194,8 @@
                   width="80"
                   height="80"
                   :placeholder="[10, 10, 5, 10]"
-                  :src="item.user.image"
-                  :alt="`User - ${item.user.name}`"
+                  :src="item.author_photo"
+                  :alt="`User - ${item.author_full_name}`"
                   class="size-full object-cover"
                 />
               </div>
@@ -255,12 +204,12 @@
                 <span
                   class="text-[1.25rem] lg:text-[1.75rem] leading-none font-bold font-din capitalize"
                 >
-                  {{ item.user.name }}
+                  {{ item.author_full_name }}
                 </span>
                 <span
                   class="text-[0.875rem] leading-4 lg:text-[1rem] lg:leading-[1.5rem] font-medium"
                 >
-                  {{ item.user.position }}
+                  {{ item.author_job_title }}
                 </span>
               </div>
             </div>
