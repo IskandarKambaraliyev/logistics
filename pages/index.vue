@@ -5,7 +5,7 @@
   <SectionMainHowBook />
   <SectionMainAdvantages />
   <SectionMainCost />
-  <SectionMainBrands />
+  <SectionMainPartners />
   <SectionMainServices />
   <SectionMainMap />
   <SectionMainReviews />

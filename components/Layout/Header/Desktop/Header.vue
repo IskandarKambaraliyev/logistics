@@ -51,6 +51,13 @@
 
   const { data, error } = await useMyFetch(`/menu`);
 
+  if (error.value) {
+    throw createError({
+      statusCode: error.value.statusCode,
+      message: error.value.message,
+    });
+  }
+
   // console.log(data.value);
 </script>
 
@@ -70,7 +77,7 @@
         <LayoutHeaderLogo :sticky="sticky" />
 
         <Transition name="fade-300">
-          <div class="flex items-center xl:gap-4" v-if="data.results">
+          <div class="flex items-center xl:gap-4" v-if="data?.results">
             <div v-for="(item, index) in data.results.slice(0, 5)" :key="index">
               <LayoutHeaderDesktopContent
                 v-model="hovered"

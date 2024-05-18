@@ -17,71 +17,46 @@
 
   const breakpoints = {
     100: {
-      slidesPerView: 2,
+      slidesPerView: 2.3,
       spaceBetween: 16,
     },
     450: {
-      slidesPerView: 3,
+      slidesPerView: 3.3,
       spaceBetween: 24,
     },
     768: {
-      slidesPerView: 5.9,
+      slidesPerView: 4.3,
       spaceBetween: 30,
       centeredSlides: true,
     },
     1024: {
-      slidesPerView: 7,
+      slidesPerView: 5.3,
       spaceBetween: 40,
     },
     1280: {
-      slidesPerView: 8,
-      spaceBetween: 44,
+      slidesPerView: 6.5,
+      spaceBetween: 48,
     },
     1550: {
-      slidesPerView: 10,
-      spaceBetween: 48,
+      slidesPerView: 7.5,
+      spaceBetween: 64,
     },
   };
 
-  const data = [
-    {
-      id: 1,
-      image: "/brands/brand-1.png",
-    },
-    {
-      id: 2,
-      image: "/brands/brand-2.png",
-    },
-    {
-      id: 3,
-      image: "/brands/brand-3.png",
-    },
-    {
-      id: 4,
-      image: "/brands/brand-4.png",
-    },
-    {
-      id: 5,
-      image: "/brands/brand-5.png",
-    },
-    {
-      id: 6,
-      image: "/brands/brand-6.png",
-    },
-    {
-      id: 7,
-      image: "/brands/brand-7.png",
-    },
-    {
-      id: 8,
-      image: "/brands/brand-8.png",
-    },
-  ];
+  const { data, error } = await useMyFetch(`/partners/`);
+
+  if (error.value) {
+    throw createError({
+      statusCode: error.value.statusCode,
+      message: error.value.message,
+    });
+  }
 </script>
 
 <template>
   <div
     class="pt-[5.5rem] md:pt-[7.5rem] rounded-t-[2rem] -mt-8 bg-white space-y-8 md:space-y-14"
+    v-if="data.results"
   >
     <div class="container space-y-14">
       <UiTitle>
@@ -93,25 +68,15 @@
         :breakpoints="breakpoints"
         :loop="true"
         :autoplay="autoplayConfig"
+        class="main_partners_swiper"
       >
         <swiper-slide
-          v-for="item in data"
+          v-for="item in data?.results"
           :key="item.id"
-          class="!flex justify-center main_brands_swiper"
+          class="!flex justify-center"
         >
           <img
-            :src="item.image"
-            :alt="`Brand - ${item.id}`"
-            class="w-auto h-full"
-          />
-        </swiper-slide>
-        <swiper-slide
-          v-for="item in data"
-          :key="item.id"
-          class="!flex justify-center main_brands_swiper"
-        >
-          <img
-            :src="item.image"
+            :src="item.logo"
             :alt="`Brand - ${item.id}`"
             class="w-auto h-full"
           />
@@ -122,9 +87,9 @@
 </template>
 
 <style lang="scss">
-  .main_brands_swiper {
+  .main_partners_swiper {
     .swiper-wrapper {
-      align-items: center;
+      align-items: center !important;
     }
   }
 </style>

@@ -3,6 +3,13 @@
 
   const { data, error } = await useMyFetch(`/menu`);
 
+  if (error.value) {
+    throw createError({
+      statusCode: error.value.statusCode,
+      message: error.value.message,
+    });
+  }
+
   const { width } = useWindowSize();
 
   const route = useRoute();
@@ -52,7 +59,7 @@
   };
 
   const toggleContent = (val) => {
-    if (currentContent.value !== val && data.value.results) {
+    if (currentContent.value !== val && data.value?.results) {
       contentOpen.value = true;
       currentContent.value = data.value.results[val];
       contentFor.value = data.value.results[val]?.title;
@@ -202,7 +209,7 @@
       <div class="wrapper">
         <Transition name="content-transform-150-left">
           <div class="content_menu" v-if="!contentOpen">
-            <div class="main">
+            <div class="main" v-if="data?.results">
               <NuxtLink
                 v-for="(item, index) in data.results"
                 :key="index"
