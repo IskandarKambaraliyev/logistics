@@ -234,7 +234,7 @@
               </NuxtLink>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pb-24">
-              <UiButton to="/order" variant="secondary" color="light">
+              <UiButton to="/contact" variant="secondary" color="light">
                 Check my order
               </UiButton>
               <UiButton variant="primary" color="light" @click="openInstant">

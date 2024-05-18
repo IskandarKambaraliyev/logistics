@@ -120,24 +120,36 @@
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     if (form.ship_date) {
       if (!checkFields()) {
         const body = {
-          pickup: form.pickup,
-          delivery: form.delivery,
+          pick_up_location: form.pickup,
+          delivery_location: form.delivery,
           year: form.year,
           make: form.make,
           model: form.model,
-          type: form.type,
-          vehicle: form.vehicle,
-          ship_date: format(form.ship_date, "d MMM, yyy"),
+          vehicle_type: form.type === 1 ? "Open/Standard" : "Enclosed",
+          operational_status:
+            form.vehicle === 1 ? "Vehicle drivers" : "Inoperable",
+          ship_date: format(form.ship_date, "yyyy-MM-dd"),
           name: form.name,
           email: form.email,
-          phone: form.phone,
+          phone: form.phone.replace(" ", ""),
         };
 
         console.log(body);
+
+        const { data, error } = await useMyFetch(`/leads/create/`, {
+          method: "POST",
+          body: body,
+        });
+
+        if (error.value) {
+          console.log(error.value);
+        } else {
+          console.log(data.value);
+        }
       }
     } else {
       datePickInput.value.focus();

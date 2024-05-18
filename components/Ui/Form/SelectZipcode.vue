@@ -67,6 +67,8 @@
             return `${item.city}, ${item.state}, ${item.zip_code}`;
           }
         "
+        aria-autocomplete="off"
+        autocomplete="off"
         required
       />
       <Transition name="fade-300">
