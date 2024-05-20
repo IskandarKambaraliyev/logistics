@@ -41,10 +41,12 @@
       </span>
       <div v-else class="w-full">
         <div class="w-full aspect-[2/1]">
-          <img
+          <NuxtImg
+            provider="ipx"
             width="500"
             height="250"
             :src="data.image"
+            :placeholder="[20, 10, 5, 10]"
             alt="State image"
             class="size-full object-cover"
           />

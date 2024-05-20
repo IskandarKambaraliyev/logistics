@@ -1,15 +1,14 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <LayoutText />
   <LayoutHeaderDesktopHeader />
   <LayoutHeaderMobileHeader />
-  <ModalsInstant />
+  <LazyModalsInstant />
   <main class="text-dark-blue-main">
     <slot />
   </main>
-  <LayoutFooter />
+  <LazyLayoutFooter />
 </template>
 
 <style lang="scss" scoped></style>

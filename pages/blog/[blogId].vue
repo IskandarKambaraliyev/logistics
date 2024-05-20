@@ -15,7 +15,7 @@
 </script>
 
 <template>
-  <BaseBanner :title="data.title" label="Pages" :image="data.image" />
+  <BaseBanner :title="data.title" label="Blog" :image="data.image" />
   <BaseDetail :data="data" class="mb" />
 </template>
 

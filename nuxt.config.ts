@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     domains: [
       "unsplash.com",
       "images.unsplash.com",
-      "cp.express-auto-carriers.uz",
+      "cp.express-auto-carriers.com",
       "imgbb.com",
       "i.ibb.co",
     ],
