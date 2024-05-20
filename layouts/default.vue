@@ -5,6 +5,7 @@
   <LayoutHeaderDesktopHeader />
   <LayoutHeaderMobileHeader />
   <LazyModalsInstant />
+  <LazyModalsVideo />
   <main class="text-dark-blue-main">
     <slot />
   </main>

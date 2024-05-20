@@ -21,6 +21,8 @@
       icon: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_113_2373)"><path d="M29.3333 2.66675H7.99996V24.0001H29.3333V2.66675ZM16.6266 18.6667L12 14.0001L13.8666 12.1201L16.6266 14.8934L23.4666 8.00008L25.3333 9.88008L16.6266 18.6667ZM5.33329 8.00008H2.66663V29.3334H24V26.6667H5.33329V8.00008Z" fill="white"/></g><defs><clipPath id="clip0_113_2373"><rect width="32" height="32" fill="white"/></clipPath></defs></svg>',
     },
   ];
+
+  const videoSrc = "https://youtu.be/EFWMnvOwLMY";
 </script>
 
 <template>
@@ -54,6 +56,12 @@
 
           <button
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] size-[2.25rem] md:size-[4.125rem] rounded-full overflow-hidden flex-center"
+            @click="
+              () => {
+                video.open = true;
+                video.src = videoSrc;
+              }
+            "
           >
             <svg
               width="4.125rem"
