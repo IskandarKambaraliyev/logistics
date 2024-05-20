@@ -43,6 +43,7 @@
         <div class="w-full aspect-[2/1]">
           <NuxtImg
             provider="ipx"
+            format="webp"
             width="500"
             height="250"
             :src="data.image"

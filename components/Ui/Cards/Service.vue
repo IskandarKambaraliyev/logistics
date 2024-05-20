@@ -20,7 +20,7 @@
     <p
       class="text-[0.875rem] leading-[1.25rem] lg:text-base text-dark-blue-main group-hover:text-white"
     >
-      {{ item.description }}
+      {{ item.subtitle }}
     </p>
   </NuxtLink>
 </template>
