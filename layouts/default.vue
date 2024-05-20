@@ -2,8 +2,8 @@
 
 <template>
   <LayoutText />
-  <LayoutHeaderDesktopHeader />
-  <LayoutHeaderMobileHeader />
+  <LazyLayoutHeaderDesktopHeader />
+  <LazyLayoutHeaderMobileHeader />
   <LazyModalsInstant />
   <LazyModalsVideo />
   <main class="text-dark-blue-main">

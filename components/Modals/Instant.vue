@@ -259,6 +259,7 @@
                       v-model="form.model"
                       placeholder="Model"
                       id="instant-model"
+                      autocomplete="off"
                     />
                   </UiFormGroup>
                 </div>

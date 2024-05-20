@@ -7,6 +7,7 @@
     "placeholder",
     "value",
     "readonly",
+    "autocomplete",
   ]);
 
   const emit = defineEmits(["update:modelValue"]);
@@ -21,6 +22,7 @@
     :placeholder="props.placeholder ? props.placeholder : ''"
     :value="props.value ? props.value : props.modelValue"
     :readonly="props.readonly ? props.readonly : false"
+    :autocomplete="autocomplete"
     class="rounded-full ring-1 ring-dark-blue-000 px-5 py-3 md:py-4 outline-none focus:ring-blue-500 text-[0.875rem] md:text-[1rem] leading-6 placeholder:text-dark-blue-300"
   />
 </template>

@@ -56,6 +56,7 @@
             :src="item?.image"
             alt="Hero image"
             class="size-full object-cover"
+            preload
           />
         </div>
       </swiper-slide>

@@ -4,13 +4,13 @@
   <SectionMainHero />
   <SectionMainHowBook />
   <SectionMainAdvantages />
-  <SectionMainCost />
-  <SectionMainPartners />
-  <SectionMainServices />
-  <SectionMainMap />
-  <SectionMainReviews />
-  <SectionMainFaq />
-  <BaseLatest />
+  <LazySectionMainCost />
+  <LazySectionMainPartners />
+  <LazySectionMainServices />
+  <LazySectionMainMap />
+  <LazySectionMainReviews />
+  <LazySectionMainFaq />
+  <LazyBaseLatest />
 </template>
 
 <style lang="scss" scoped></style>
