@@ -7,19 +7,21 @@
     <div
       class="container py-6 lg:py-8 flex max-md:flex-col items-center justify-between"
     >
-      <p class="footer_about_text font-din">
+      <p
+        class="text-[1rem] lg:text-[1.25rem] leading-none font-bold text-dark-blue-700 font-din"
+      >
         Copyright © 2006-{{ year }} by Express Auto Carriers
       </p>
       <div class="flex items-center gap-2.5">
-        <span class="footer_about_text font-din">Designed with love</span>
+        <span
+          class="text-[1rem] lg:text-[1.25rem] leading-none font-bold text-dark-blue-700 font-din"
+        >
+          Designed with love
+        </span>
         <LayoutFooterRedmedia />
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-  .footer_about_text {
-    @apply text-[1rem] lg:text-[1.25rem] leading-none font-bold text-dark-blue-700;
-  }
-</style>
+<!-- <style lang="scss" scoped></style> -->

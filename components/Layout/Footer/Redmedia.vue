@@ -34,4 +34,4 @@
   </NuxtLink>
 </template>
 
-<style></style>
+<!-- <style></style> -->
