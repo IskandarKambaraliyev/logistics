@@ -1,6 +1,5 @@
 <script setup>
-  const image =
-    "https://express-auto-carriers.vercel.app/contact.png";
+  const image = "https://cp.express-auto-carriers.com/media/slides/contact.png";
 </script>
 
 <template>

@@ -44,6 +44,8 @@
           <NuxtImg
             provider="ipx"
             format="webp"
+            width="806"
+            height="403"
             :placeholder="[20, 10, 5, 10]"
             :src="image"
             alt="How to book"
