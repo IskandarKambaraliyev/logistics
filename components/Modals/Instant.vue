@@ -138,8 +138,6 @@
           phone: form.phone.replace(" ", ""),
         };
 
-        console.log(body);
-
         const { data, error } = await useMyFetch(`/leads/create/`, {
           method: "POST",
           body: body,
@@ -148,7 +146,7 @@
         if (error.value) {
           console.log(error.value);
         } else {
-          console.log(data.value);
+          return;
         }
       }
     } else {

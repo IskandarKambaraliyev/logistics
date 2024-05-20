@@ -18,6 +18,8 @@ export default defineNuxtConfig({
       "unsplash.com",
       "images.unsplash.com",
       "cp.express-auto-carriers.com",
+      "express-auto-carriers.com",
+      "express-auto-carriers.vercel.app",
       "imgbb.com",
       "i.ibb.co",
     ],

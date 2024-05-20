@@ -106,33 +106,31 @@
       datePickInput.value.focus();
       openDate.value = true;
     } else if (!checkFields()) {
-        const body = {
-          pick_up_location: form.pickup,
-          delivery_location: form.delivery,
-          year: form.year,
-          make: form.make,
-          model: form.model,
-          vehicle_type: form.type === 1 ? "Open/Standard" : "Enclosed",
-          operational_status:
-            form.vehicle === 1 ? "Vehicle drivers" : "Inoperable",
-          ship_date: format(form.ship_date, "yyyy-MM-dd"),
-          name: form.name,
-          email: form.email,
-          phone: form.phone.replace(" ", ""),
-        };
+      const body = {
+        pick_up_location: form.pickup,
+        delivery_location: form.delivery,
+        year: form.year,
+        make: form.make,
+        model: form.model,
+        vehicle_type: form.type === 1 ? "Open/Standard" : "Enclosed",
+        operational_status:
+          form.vehicle === 1 ? "Vehicle drivers" : "Inoperable",
+        ship_date: format(form.ship_date, "yyyy-MM-dd"),
+        name: form.name,
+        email: form.email,
+        phone: form.phone.replace(" ", ""),
+      };
 
-        console.log(body);
+      const { data, error } = await useMyFetch(`/leads/create/`, {
+        method: "POST",
+        body: body,
+      });
 
-        const { data, error } = await useMyFetch(`/leads/create/`, {
-          method: "POST",
-          body: body,
-        });
-
-        if (error.value) {
-          console.log(error.value);
-        } else {
-          console.log(data.value);
-        }
+      if (error.value) {
+        console.log(error.value);
+      } else {
+        return;
+      }
     }
   };
 </script>

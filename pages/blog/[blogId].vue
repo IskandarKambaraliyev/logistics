@@ -4,8 +4,6 @@
 
   const { data, error } = await useMyFetch(`/blog/id/${blogId}`);
 
-  console.log(data.value);
-
   if (error.value) {
     throw createError({
       statusCode: error.value.statusCode,

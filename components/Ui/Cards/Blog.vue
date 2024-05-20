@@ -36,8 +36,9 @@
           {{ item.title }}
         </h6>
 
-        <p v-if="item.date_time" class="text-base">
-          Posted on: {{ dateFormatter(item.date_time) }}
+        <p v-if="item.posted_data" class="text-base">
+          <!-- Posted on: {{ dateFormatter(item.date_time) }} -->
+          Posted on: {{ item.posted_data }}
         </p>
       </div>
 

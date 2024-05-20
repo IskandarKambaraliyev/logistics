@@ -21,7 +21,6 @@
 
     // Calculate the number of lines based on the gap
     const numLines = Math.floor(width.value / (gap * 2));
-    console.log(width.value, numLines * (gap * 2));
 
     for (let i = 0; i < numLines; i++) {
       const x = i * (gap * 2); // Adjust x-coordinate calculation
