@@ -162,7 +162,9 @@
       v-if="instant"
       class="fixed top-0 left-0 w-full h-[100lvh] z-modal+1 backdrop-blur-lg"
     >
-      <div class="h-full overflow-y-auto px-4 md:px-8 py-16 lg:py-32 relative">
+      <div
+        class="h-full overflow-y-auto px-4 md:px-8 pt-16 py-24 lg:py-32 relative"
+      >
         <div
           class="relative bg-white max-w-[50rem] w-full mx-auto rounded-[2rem] p-6 md:p-8 text-dark-blue-main flex flex-col gap-6 md:gap-12"
           ref="wrapper"

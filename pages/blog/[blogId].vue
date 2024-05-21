@@ -1,4 +1,6 @@
 <script setup>
+  import { convert } from "html-to-text";
+  
   const route = useRoute();
   const { blogId } = route.params;
 
@@ -10,6 +12,14 @@
       message: error.value.message,
     });
   }
+
+  useSeoMeta({
+    title: data.value.title,
+    ogTitle: data.value.title,
+    description: convert(data.value?.content.slice(0, 200)),
+    ogDescription: convert(data.value?.content.slice(0, 200)),
+    ogImage: data.value.image,
+  });
 </script>
 
 <template>

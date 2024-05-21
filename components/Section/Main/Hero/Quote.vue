@@ -147,7 +147,7 @@
         form.name = "";
         form.email = "";
         form.phone = "";
-        
+
         step.value = 1;
       }
     }
@@ -156,7 +156,7 @@
 
 <template>
   <div
-    class="bg-white rounded-[1.5rem] p-6 md:p-7 max-w-[45rem] w-full border border-dark-blue-000 relative main_hero_quote"
+    class="bg-white rounded-[1.5rem] p-6 md:p-7 max-w-[45rem] w-full border border-dark-blue-000 relative main_hero_quote max-lg:mx-auto"
   >
     <Transition name="fade-300" mode="out-in">
       <div v-if="step === 1" class="flex flex-col gap-6 md:gap-8">
