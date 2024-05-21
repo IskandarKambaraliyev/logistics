@@ -69,7 +69,9 @@
   };
 
   const handleStep1 = () => {
-    step.value = 2;
+    if (form.pickup && form.delivery) {
+      step.value = 2;
+    }
   };
 
   const handleStep2 = () => {
@@ -128,8 +130,25 @@
 
       if (error.value) {
         console.log(error.value);
+
+        // throw createError({
+        //   statusCode: error.value.statusCode,
+        //   message: error.value.message,
+        // });
       } else {
-        return;
+        form.delivery = "";
+        form.pickup = "";
+        form.year = "";
+        form.make = "";
+        form.model = "";
+        form.type = 1;
+        form.vehicle = 1;
+        form.ship_date = "";
+        form.name = "";
+        form.email = "";
+        form.phone = "";
+        
+        step.value = 1;
       }
     }
   };

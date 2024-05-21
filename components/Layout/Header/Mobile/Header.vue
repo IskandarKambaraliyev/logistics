@@ -262,7 +262,7 @@
   .menu {
     @apply z-modal-1 transition-all bg-dark-blue-main text-white;
     position: fixed;
-    top: 2.5rem;
+    top: 2rem;
     left: 0;
     height: calc(100lvh - 2.5rem);
     width: 100%;
