@@ -8,10 +8,10 @@
 </script>
 
 <template>
-  <section v-if="data.assortments">
+  <section v-if="data.additional_content">
     <div class="container space-y-20 lg:space-y-[7.5rem]">
       <div
-        v-for="item in data.assortments"
+        v-for="item in data.additional_content"
         :key="item.id"
         class="flex flex-col lg:odd:flex-row lg:even:flex-row-reverse gap-4"
       >

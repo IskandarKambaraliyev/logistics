@@ -25,7 +25,7 @@
 <template>
   <BaseBanner :title="data.title" label="Service" :image="data.image" />
   <SectionServiceDetail :data="data" />
-  <!-- <SectionServiceServices :data="data" /> -->
+  <SectionServiceServices :data="data" />
   <BaseLatest />
 </template>
 
