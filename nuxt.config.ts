@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "@nuxt/image", "@vueuse/nuxt"],
+  modules: ["@nuxt/ui", "@nuxt/image", "@vueuse/nuxt", "nuxt-aos"],
   colorMode: {
     preference: "light",
   },
@@ -29,5 +29,9 @@ export default defineNuxtConfig({
       lg: 1280,
       xl: 1600,
     },
+  },
+  aos: {
+    once: true,
+    offset: 200,
   },
 });

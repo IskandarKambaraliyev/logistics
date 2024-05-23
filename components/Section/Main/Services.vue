@@ -15,7 +15,12 @@
       <UiTitle>Popular vehicle shipping services</UiTitle>
 
       <ul class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <li v-for="item in data.results" :key="item.id">
+        <li
+          v-for="(item, index) in data.results"
+          :key="item.id"
+          data-aos="fade-up"
+          :data-aos-delay="index * 100"
+        >
           <UiCardsService :item="item" />
         </li>
       </ul>

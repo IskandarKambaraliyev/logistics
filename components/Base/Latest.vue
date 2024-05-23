@@ -26,7 +26,12 @@
       </div>
 
       <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <li v-for="item in data.results.slice(0, 4)" :key="item.id">
+        <li
+          v-for="(item, index) in data.results.slice(0, 4)"
+          :key="item.id"
+          data-aos="fade-up"
+          :data-aos-delay="index * 100"
+        >
           <UiCardsBlog :item="item" />
         </li>
       </ul>

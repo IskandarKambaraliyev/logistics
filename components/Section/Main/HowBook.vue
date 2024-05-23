@@ -26,7 +26,7 @@
 </script>
 
 <template>
-  <section>
+  <section class="overflow-x-hidden">
     <div class="container">
       <UiTitle>
         <span>How can I book</span>
@@ -41,6 +41,7 @@
 
       <div class="flex max-lg:flex-col gap-2 md:gap-4">
         <div
+          data-aos="fade-right"
           class="lg:flex-1 w-full aspect-[2/1] rounded-[1rem] md:rounded-[2rem] overflow-hidden relative"
         >
           <NuxtImg
@@ -82,6 +83,7 @@
         </div>
 
         <div
+          data-aos="fade-left"
           class="w-full lg:max-w-[35rem] bg-blue-000 rounded-[2rem] p-6 lg:p-10 lg:pb-12"
         >
           <h5

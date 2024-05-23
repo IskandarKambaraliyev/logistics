@@ -38,7 +38,7 @@
 </script>
 
 <template>
-  <div class="w-full h-max">
+  <div class="w-full h-max" data-aos="fade-right">
     <SectionMainMapCardsCard
       v-for="(item, index) in data"
       :key="item.id"

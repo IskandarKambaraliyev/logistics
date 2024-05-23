@@ -32,7 +32,7 @@
 </script>
 
 <template>
-  <section>
+  <section class="overflow-x-hidden">
     <div class="bg-blue-dark rounded-t-[2rem] py-20 md:py-[7.5rem] text-white">
       <div
         class="container grid grid-cols-1 lg:grid-cols-2 gap-y-20 gap-x-[7.5rem]"
@@ -41,15 +41,24 @@
           class="flex flex-col max-lg:items-center gap-8 md:gap-12 lg:gap-14"
         >
           <div class="flex flex-col max-lg:items-center gap-6">
-            <div class="max-w-[15rem] md:max-w-[20rem] lg:max-w-[37rem] w-full">
+            <div
+              class="max-w-[15rem] md:max-w-[20rem] lg:max-w-[37rem] w-full"
+              data-aos="fade-up"
+            >
               <SectionMainCostImage />
             </div>
-            <UiTitle class="!text-white">
+            <UiTitle
+              class="!text-white"
+              data-aos="fade-up"
+              :data-aos-delay="100"
+            >
               How much do car transport companies charge?
             </UiTitle>
 
             <p
               class="max-lg:text-center text-[0.875rem] leading-5 md:text-base"
+              data-aos="fade-up"
+              :data-aos-delay="200"
             >
               Car shipping quotes are based on current market trends for
               nationwide auto transport. Your total cost from auto shipping
@@ -63,7 +72,13 @@
             </p>
           </div>
 
-          <UiButton variant="primary" color="light" class="w-max max-w-max">
+          <UiButton
+            variant="primary"
+            color="light"
+            class="w-max max-w-max"
+            data-aos="fade-up"
+            :data-aos-delay="300"
+          >
             Car shipping cost information
           </UiButton>
         </div>
@@ -75,6 +90,8 @@
             v-for="item in data"
             :key="item.id"
             class="main_cost_item flex max-lg:flex-col max-lg:items-center gap-6"
+            data-aos="fade-left"
+            :data-aos-delay="`${item.id * 100 + 600}`"
           >
             <div class="main_cost_item-icon" v-html="item.icon"></div>
             <div

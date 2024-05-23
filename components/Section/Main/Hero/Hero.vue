@@ -11,12 +11,12 @@
 
     <div class="relative z-[1]">
       <div class="container space-y-8 md:space-y-10">
-        <UiTitle class="text-white">
+        <UiTitle class="text-white" data-aos="fade-up" :data-aos-delay="500">
           A nationwide auto transport company that offers speedy and dependable
           service
         </UiTitle>
 
-        <SectionMainHeroQuote />
+        <SectionMainHeroQuote data-aos="fade-up" :data-aos-delay="600" />
       </div>
     </div>
   </div>
