@@ -32,6 +32,6 @@ export default defineNuxtConfig({
   },
   aos: {
     once: true,
-    offset: 200,
+    offset: 100,
   },
 });
