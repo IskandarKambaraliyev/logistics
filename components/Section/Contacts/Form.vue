@@ -41,9 +41,32 @@
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!checkFields()) {
-      console.log(form);
+      const body = {
+        name: form.name,
+        email: form.email,
+        phone_number: form.phone.replace(' ', ''),
+        subject: form.subject,
+        message: form.message,
+      };
+
+      const { data, error } = await useMyFetch(`/feedback/create/`, {
+        method: "POST",
+        body: body,
+      });
+
+      if (error.value) {
+        console.log(error.value);
+      } else {
+        form.name = "";
+        form.email = "";
+        form.phone = "";
+        form.subject = "";
+        form.message = "";
+
+        console.log(data.value);
+      }
     } else {
       console.log("Error");
     }
