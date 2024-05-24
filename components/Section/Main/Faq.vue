@@ -60,8 +60,6 @@
           <button
             class="p-5 bg-blue-000 transition flex items-center justify-between text-left"
             :class="`${open ? 'bg-blue-dark text-white' : ''}`"
-            data-aos="fade-up"
-            :data-aos-delay="`${index * 100}`"
           >
             <span
               class="text-[0.875rem] leading-4 md:text-[1.125rem] md:leading-loose font-medium"

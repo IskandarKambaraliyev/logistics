@@ -4,8 +4,8 @@ export const useMyFetch = async (request, opts) => {
   return await useFetch(() => `/api${request}`, {
     baseURL: config.public.baseURL,
     onResponse({ request, response }) {
-      console.log(request);
-      console.log(response);
+      // console.log(request);
+      // console.log(response);
     },
     ...opts,
   });
