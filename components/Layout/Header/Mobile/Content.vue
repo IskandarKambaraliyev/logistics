@@ -6,11 +6,11 @@
     },
     content: {
       type: Array,
-      required: true,
+      required: false,
     },
     for: {
       type: String,
-      required: true,
+      required: false,
     },
   });
 

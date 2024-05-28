@@ -2,11 +2,11 @@
   const props = defineProps({
     item: {
       type: Object,
-      required: true,
+      required: false,
     },
     modelValue: {
       type: String,
-      required: true,
+      required: false,
     },
     open: {
       type: Boolean,
@@ -34,7 +34,11 @@
         }
       "
     >
-      <span class="flex-1 truncate text-[0.875rem] leading-6 font-medium font-euclid">{{ item.title }}</span>
+      <span
+        class="flex-1 truncate text-[0.875rem] leading-6 font-medium font-euclid"
+      >
+        {{ item.title }}
+      </span>
       <UIcon
         v-if="item.children"
         name="i-heroicons-chevron-down-20-solid"

@@ -2,7 +2,7 @@
   const props = defineProps({
     data: {
       type: Array,
-      required: true,
+      required: false,
     },
     open: {
       type: Boolean,
@@ -27,7 +27,10 @@
         }"
       >
         <div class="py-6 max-h-[70vh] h-auto overflow-auto custom-scrollbar">
-          <div class="flex flex-row gap-4 divide-x divide-dark-blue-000" :class="{'flex-col': allChildrenEmpty}">
+          <div
+            class="flex flex-row gap-4 divide-x divide-dark-blue-000"
+            :class="{ 'flex-col': allChildrenEmpty }"
+          >
             <div
               v-for="(item, index) in data.slice(0, data.length)"
               :key="index"
