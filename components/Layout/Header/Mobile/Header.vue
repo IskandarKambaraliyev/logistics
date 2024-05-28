@@ -116,7 +116,6 @@
         ? 'bg-white text-dark-blue-main'
         : 'bg-white/10 text-white'
     "
-    style="backdrop-filter: blur(150px)"
   >
     <div class="px-4 md:px-8 flex items-center justify-between">
       <LayoutHeaderLogo :sticky="sticky && !open" />
