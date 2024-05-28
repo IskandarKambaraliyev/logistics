@@ -1,4 +1,11 @@
 <script setup>
+  const props = defineProps({
+    isSticky: {
+      type: Boolean,
+      default: false,
+    },
+  });
+
   const instant = useInstant();
 
   const openInstant = () => {
@@ -10,15 +17,21 @@
   const linksTop = ref(0);
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      sticky.value = true;
+    if (!props.isSticky) {
+      if (window.scrollY > 0) {
+        sticky.value = true;
+      } else {
+        sticky.value = false;
+      }
     } else {
-      sticky.value = false;
+      sticky.value = true;
     }
   };
 
   onMounted(() => {
-    sticky.value = window.scrollY > 0;
+    if (!props.isSticky) {
+      sticky.value = window.scrollY > 0;
+    }
 
     window.addEventListener("scroll", handleScroll);
 
@@ -69,7 +82,6 @@
         ? 'bg-white text-dark-blue-main shadow-xl'
         : 'bg-white/10 text-white'
     "
-    style="backdrop-filter: blur(150px)"
     ref="header"
   >
     <div class="container min-h-14 flex items-center justify-between gap-12">

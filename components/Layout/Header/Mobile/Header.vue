@@ -1,5 +1,11 @@
 <script setup>
   import { useWindowSize } from "@vueuse/core";
+  const props = defineProps({
+    isSticky: {
+      type: Boolean,
+      default: false,
+    },
+  });
 
   const { data, error } = await useMyFetch(`/menu`);
 
@@ -24,15 +30,19 @@
   const header = ref(null);
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      sticky.value = true;
-    } else {
-      sticky.value = false;
+    if (!props.isSticky) {
+      if (window.scrollY > 0) {
+        sticky.value = true;
+      } else {
+        sticky.value = false;
+      }
     }
   };
 
   onMounted(() => {
-    sticky.value = window.scrollY > 0;
+    if (!props.isSticky) {
+      sticky.value = window.scrollY > 0;
+    }
 
     window.addEventListener("scroll", handleScroll);
   });

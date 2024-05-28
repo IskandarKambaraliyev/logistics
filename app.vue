@@ -47,6 +47,16 @@
         sizes: "512x512",
       },
     ],
+    script: [
+      {
+        children: `
+          window.replainSettings = { id: 'dd5ccf91-6cf1-4af6-b906-8bb4ef37e921' };
+          (function(u){var s=document.createElement('script');s.async=true;s.src=u;
+          var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
+          })('https://widget.replain.cc/dist/client.js');
+        `,
+      },
+    ],
   });
 </script>
 
