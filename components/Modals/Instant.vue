@@ -130,8 +130,7 @@
           make: form.make,
           model: form.model,
           vehicle_type: form.type === 1 ? "Open/Standard" : "Enclosed",
-          operational_status:
-            form.vehicle === 1 ? "Vehicle drivers" : "Inoperable",
+          operational_status: form.vehicle === 1 ? "Operable" : "Inoperable",
           ship_date: format(form.ship_date, "yyyy-MM-dd"),
           name: form.name,
           email: form.email,
@@ -266,36 +265,40 @@
                   </UiFormGroup>
                 </div>
 
-                <div class="form_group-inputs">
-                  <UiFormRadio
-                    @click="handleChangeType(1)"
-                    :active="form.type === 1"
-                  >
-                    Open/Standart
-                  </UiFormRadio>
+                <UiFormGroup label="Trailer type">
+                  <div class="form_group-inputs">
+                    <UiFormRadio
+                      @click="handleChangeType(1)"
+                      :active="form.type === 1"
+                    >
+                      Open/Standart
+                    </UiFormRadio>
 
-                  <UiFormRadio
-                    @click="handleChangeType(2)"
-                    :active="form.type === 2"
-                  >
-                    Enclosed
-                  </UiFormRadio>
-                </div>
+                    <UiFormRadio
+                      @click="handleChangeType(2)"
+                      :active="form.type === 2"
+                    >
+                      Enclosed
+                    </UiFormRadio>
+                  </div>
+                </UiFormGroup>
 
-                <div class="form_group-inputs">
-                  <UiFormRadio
-                    @click="handleChangeVehicle(1)"
-                    :active="form.vehicle === 1"
-                  >
-                    Vehicle drivers
-                  </UiFormRadio>
-                  <UiFormRadio
-                    @click="handleChangeVehicle(2)"
-                    :active="form.vehicle === 2"
-                  >
-                    Inoperable
-                  </UiFormRadio>
-                </div>
+                <UiFormGroup label="Is vehicle operable">
+                  <div class="form_group-inputs">
+                    <UiFormRadio
+                      @click="handleChangeVehicle(1)"
+                      :active="form.vehicle === 1"
+                    >
+                      Operable
+                    </UiFormRadio>
+                    <UiFormRadio
+                      @click="handleChangeVehicle(2)"
+                      :active="form.vehicle === 2"
+                    >
+                      Inoperable
+                    </UiFormRadio>
+                  </div>
+                </UiFormGroup>
               </div>
             </div>
 

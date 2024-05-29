@@ -120,91 +120,101 @@
     <div class="px-4 md:px-8 flex items-center justify-between">
       <LayoutHeaderLogo :sticky="sticky && !open" />
 
-      <UiButtonCircle
-        :color="sticky && !open ? 'dark' : 'light'"
-        @click="toggleMenu"
-      >
-        <svg
-          v-if="!open"
-          width="1rem"
-          height="1rem"
-          viewBox="0 0 17 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+      <div class="flex items-center gap-4">
+        <UiButtonCircle
+          to="tel:555-555-5555"
+          :color="sticky ? 'dark' : 'light'"
+          class="xl:!hidden"
         >
-          <path
-            d="M2.57373 8H13.5737"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="
-              sticky && !open
-                ? 'stroke-dark-blue-main group-hover:stroke-white'
-                : 'stroke-white group-hover:stroke-dark-blue-main'
-            "
-            class="transition"
-          />
-          <path
-            d="M2.57373 4H13.5737"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="
-              sticky && !open
-                ? 'stroke-dark-blue-main group-hover:stroke-white'
-                : 'stroke-white group-hover:stroke-dark-blue-main'
-            "
-            class="transition"
-          />
-          <path
-            d="M2.57373 12H13.5737"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="
-              sticky && !open
-                ? 'stroke-dark-blue-main group-hover:stroke-white'
-                : 'stroke-white group-hover:stroke-dark-blue-main'
-            "
-            class="transition"
-          />
-        </svg>
-        <svg
-          v-else
-          width="1rem"
-          height="1rem"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
+          <UIcon name="i-heroicons-phone-solid" />
+        </UiButtonCircle>
+
+        <UiButtonCircle
+          :color="sticky && !open ? 'dark' : 'light'"
+          @click="toggleMenu"
         >
-          <path
-            d="M12.5 3.5L3.5 12.5"
-            stroke="white"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="
-              sticky && !open
-                ? 'stroke-dark-blue-main group-hover:stroke-white'
-                : 'stroke-white group-hover:stroke-dark-blue-main'
-            "
-            class="transition"
-          />
-          <path
-            d="M12.5 12.5L3.5 3.5"
-            stroke="white"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            :class="
-              sticky && !open
-                ? 'stroke-dark-blue-main group-hover:stroke-white'
-                : 'stroke-white group-hover:stroke-dark-blue-main'
-            "
-            class="transition"
-          />
-        </svg>
-      </UiButtonCircle>
+          <svg
+            v-if="!open"
+            width="1rem"
+            height="1rem"
+            viewBox="0 0 17 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.57373 8H13.5737"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              :class="
+                sticky && !open
+                  ? 'stroke-dark-blue-main group-hover:stroke-white'
+                  : 'stroke-white group-hover:stroke-dark-blue-main'
+              "
+              class="transition"
+            />
+            <path
+              d="M2.57373 4H13.5737"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              :class="
+                sticky && !open
+                  ? 'stroke-dark-blue-main group-hover:stroke-white'
+                  : 'stroke-white group-hover:stroke-dark-blue-main'
+              "
+              class="transition"
+            />
+            <path
+              d="M2.57373 12H13.5737"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              :class="
+                sticky && !open
+                  ? 'stroke-dark-blue-main group-hover:stroke-white'
+                  : 'stroke-white group-hover:stroke-dark-blue-main'
+              "
+              class="transition"
+            />
+          </svg>
+          <svg
+            v-else
+            width="1rem"
+            height="1rem"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12.5 3.5L3.5 12.5"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              :class="
+                sticky && !open
+                  ? 'stroke-dark-blue-main group-hover:stroke-white'
+                  : 'stroke-white group-hover:stroke-dark-blue-main'
+              "
+              class="transition"
+            />
+            <path
+              d="M12.5 12.5L3.5 3.5"
+              stroke="white"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              :class="
+                sticky && !open
+                  ? 'stroke-dark-blue-main group-hover:stroke-white'
+                  : 'stroke-white group-hover:stroke-dark-blue-main'
+              "
+              class="transition"
+            />
+          </svg>
+        </UiButtonCircle>
+      </div>
     </div>
   </header>
   <Transition name="fade-300">

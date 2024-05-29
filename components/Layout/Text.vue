@@ -14,7 +14,7 @@
 
     const loop = horizontalLoop(texts, {
       repeat: -1,
-      speed: 1,
+      speed: 0.5,
       draggable: true,
       reversed: false,
       paddingRight: parseFloat(gsap.getProperty(texts[0], "marginRight", "px")),

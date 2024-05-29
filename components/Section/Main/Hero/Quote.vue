@@ -115,8 +115,7 @@
         make: form.make,
         model: form.model,
         vehicle_type: form.type === 1 ? "Open/Standard" : "Enclosed",
-        operational_status:
-          form.vehicle === 1 ? "Vehicle drivers" : "Inoperable",
+        operational_status: form.vehicle === 1 ? "Operable" : "Inoperable",
         ship_date: format(form.ship_date, "yyyy-MM-dd"),
         name: form.name,
         email: form.email,
@@ -263,28 +262,39 @@
         </UiButtonCircle>
 
         <form class="flex flex-col gap-6" @submit.prevent="handleStep3">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <UiFormRadio :active="form.type === 1" @click="handleChangeType(1)">
-              Open/Standart
-            </UiFormRadio>
-            <UiFormRadio :active="form.type === 2" @click="handleChangeType(2)">
-              Enclosed
-            </UiFormRadio>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <UiFormRadio
-              @click="handleChangeVehicle(1)"
-              :active="form.vehicle === 1"
-            >
-              Vehicle drivers
-            </UiFormRadio>
-            <UiFormRadio
-              @click="handleChangeVehicle(2)"
-              :active="form.vehicle === 2"
-            >
-              Inoperable
-            </UiFormRadio>
-          </div>
+          <UiFormGroup label="Trailer type" :required="false">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <UiFormRadio
+                :active="form.type === 1"
+                @click="handleChangeType(1)"
+              >
+                Open/Standart
+              </UiFormRadio>
+              <UiFormRadio
+                :active="form.type === 2"
+                @click="handleChangeType(2)"
+              >
+                Enclosed
+              </UiFormRadio>
+            </div>
+          </UiFormGroup>
+
+          <UiFormGroup label="Is vehicle operable?" :required="false">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <UiFormRadio
+                @click="handleChangeVehicle(1)"
+                :active="form.vehicle === 1"
+              >
+                Vehicle drivers
+              </UiFormRadio>
+              <UiFormRadio
+                @click="handleChangeVehicle(2)"
+                :active="form.vehicle === 2"
+              >
+                Inoperable
+              </UiFormRadio>
+            </div>
+          </UiFormGroup>
 
           <UiButton type="submit">Next step</UiButton>
         </form>

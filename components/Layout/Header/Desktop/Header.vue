@@ -106,11 +106,20 @@
         <UiButton
           variant="secondary"
           :color="sticky ? 'dark' : 'light'"
-          to="/contact"
+          to="tel:555-555-5555"
           class="max-xl:!hidden"
         >
-          Check my order
+          (555) 555-5555
         </UiButton>
+
+        <UiButtonCircle
+          to="tel:555-555-5555"
+          :color="sticky ? 'dark' : 'light'"
+          class="xl:!hidden"
+        >
+          <UIcon name="i-heroicons-phone-solid" />
+        </UiButtonCircle>
+
         <UiButton
           variant="primary"
           :color="sticky ? 'dark' : 'light'"

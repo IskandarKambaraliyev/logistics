@@ -42,10 +42,10 @@
         >
           <div class="flex flex-col max-lg:items-center gap-6">
             <div
-              class="max-w-[15rem] md:max-w-[20rem] lg:max-w-[37rem] w-full"
+              class="max-w-[15rem] md:max-w-[20rem] lg:max-w-[28rem] w-full"
               data-aos="fade-up"
             >
-              <SectionMainCostImage />
+              <img src="/cost.png" alt="Image" />
             </div>
             <UiTitle
               class="!text-white"
