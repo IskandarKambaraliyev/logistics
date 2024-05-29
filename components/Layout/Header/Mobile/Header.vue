@@ -128,7 +128,12 @@
         >
           <UIcon
             name="i-heroicons-phone-solid"
-            class="group-hover:text-dark-blue-main"
+            class="transition"
+            :class="
+              sticky && !open
+                ? 'text-dark-blue-main group-hover:text-white'
+                : 'text-white group-hover:text-dark-blue-main'
+            "
           />
         </UiButtonCircle>
 
