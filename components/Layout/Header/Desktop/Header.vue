@@ -106,14 +106,14 @@
         <UiButton
           variant="secondary"
           :color="sticky ? 'dark' : 'light'"
-          to="tel:555-555-5555"
+          to="tel:(210) 463-4436"
           class="max-xl:!hidden"
         >
-          (555) 555-5555
+          (210) 463-4436
         </UiButton>
 
         <UiButtonCircle
-          to="tel:555-555-5555"
+          to="tel:(210) 463-4436"
           :color="sticky ? 'dark' : 'light'"
           class="xl:!hidden"
         >

@@ -65,7 +65,7 @@
   ];
 
   const contact = {
-    phone: "(610) 871-7777",
+    phone: "(210) 463-4436",
     email: "admin@express-auto-carriers.com",
   };
 

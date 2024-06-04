@@ -122,7 +122,7 @@
 
       <div class="flex items-center gap-4">
         <UiButtonCircle
-          to="tel:555-555-5555"
+          to="tel:(210) 463-4436"
           :color="sticky && !open ? 'dark' : 'light'"
           class="xl:!hidden"
         >

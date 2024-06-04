@@ -164,10 +164,10 @@
         >
           <span class="flex-1">Get an instant quote or call now</span>
           <NuxtLink
-            to="tel:555-555-5555"
+            to="tel:(210) 463-4436"
             class="text-blue-main hover:text-blue-700 select-text"
           >
-            555-555-5555
+            (210) 463-4436
           </NuxtLink>
         </div>
 
