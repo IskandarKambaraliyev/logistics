@@ -50,7 +50,7 @@
     script: [
       {
         children: `
-          window.replainSettings = { id: 'dd5ccf91-6cf1-4af6-b906-8bb4ef37e921' };
+          window.replainSettings = { id: 'c06be102-f89c-4a15-8686-df0ac035d944' };
           (function(u){var s=document.createElement('script');s.async=true;s.src=u;
           var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
           })('https://widget.replain.cc/dist/client.js');

@@ -66,7 +66,7 @@
 
   const contact = {
     phone: "(210) 463-4436",
-    email: "admin@express-auto-carriers.com",
+    email: "justin@express-auto-carriers.com",
   };
 
   const socials = {
