@@ -117,7 +117,15 @@
           :color="sticky ? 'dark' : 'light'"
           class="xl:!hidden"
         >
-          <UIcon name="i-heroicons-phone-solid" />
+          <UIcon
+            name="i-heroicons-phone-solid"
+            class="transition"
+            :class="
+              sticky
+                ? 'text-dark-blue-main group-hover:text-white'
+                : 'text-white group-hover:text-dark-blue-main'
+            "
+          />
         </UiButtonCircle>
 
         <UiButton

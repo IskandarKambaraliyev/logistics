@@ -1,6 +1,8 @@
 <script setup>
   const colorMode = useColorMode();
 
+  const config = useRuntimeConfig();
+
   onMounted(() => {
     colorMode.value = "light";
     localStorage.setItem("nuxt-color-mode", "light");
@@ -50,13 +52,16 @@
     script: [
       {
         children: `
-          window.replainSettings = { id: 'c06be102-f89c-4a15-8686-df0ac035d944' };
+          window.replainSettings = { id: '${config.public.replainId}' };
           (function(u){var s=document.createElement('script');s.async=true;s.src=u;
           var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);
           })('https://widget.replain.cc/dist/client.js');
         `,
       },
     ],
+    htmlAttrs: {
+      lang: "en-US",
+    },
   });
 </script>
 
