@@ -32,8 +32,8 @@
     ],
     [
       {
-        title: "Montway blog",
-        to: "/pages/montway-blog",
+        title: "Blog",
+        to: "/blog",
       },
       {
         title: "Cross country shipping",
