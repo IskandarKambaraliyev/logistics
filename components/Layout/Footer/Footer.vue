@@ -67,6 +67,7 @@
   const contact = {
     phone: "(210) 463-4436",
     email: "justin@express-auto-carriers.com",
+    address: "9919 ARBOR MONTGOMERY LN BLDG 4, CINCINNATI OH 45249-8015",
   };
 
   const socials = {
@@ -78,7 +79,7 @@
   };
 
   const map =
-    '<iframe src="https://yandex.com/map-widget/v1/?ll=-75.032014%2C40.094124&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo0MDY4NjU3MzE1EltVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EsIFBlbm5zeWx2YW5pYSwgUGhpbGFkZWxwaGlhIENvdW50eSwgUGhpbGFkZWxwaGlhLCBCdXN0bGV0b24gQXZlbnVlIgoN_w-WwhXgXyBC&z=9" width="560" height="300" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>';
+    '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3087.8005251312934!2d-84.2997839!3d39.292774099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884056450103db57%3A0x3e0601acd5fea580!2s9919%20Arbor%20Montgomery%20Ln%2C%20Cincinnati%2C%20OH%2045249%2C%20USA!5e0!3m2!1sen!2s!4v1719206330154!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>>';
 </script>
 
 <template>
