@@ -6,6 +6,7 @@
   const handleClose = () => {
     video.value.open = false;
     video.value.src = null;
+    video.value.internal = false;
     window.history.back();
   };
 
@@ -13,6 +14,7 @@
     if (video.value.open) {
       video.value.open = false;
       video.value.src = null;
+      video.value.internal = false;
     }
   };
 
@@ -89,13 +91,23 @@
             />
           </svg>
         </button>
+
         <iframe
           :src="useYoutubeLink(video?.src)"
+          v-if="!video.internal"
           frameborder="0"
           allowfullscreen
           allow="autoplay"
           class="w-full max-h-[90svh] aspect-[16/9]"
         ></iframe>
+
+        <video
+          v-else
+          :src="video.src"
+          autoplay
+          controls
+          class="w-full max-h-[90svh] aspect-[16/9]"
+        />
       </div>
     </div>
   </Transition>

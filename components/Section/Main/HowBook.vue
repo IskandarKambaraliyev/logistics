@@ -22,7 +22,7 @@
     },
   ];
 
-  const videoSrc = "https://youtu.be/EFWMnvOwLMY";
+  const videoSrc = "/video.mp4";
 </script>
 
 <template>
@@ -61,6 +61,7 @@
               () => {
                 video.open = true;
                 video.src = videoSrc;
+                video.internal = true;
               }
             "
           >
