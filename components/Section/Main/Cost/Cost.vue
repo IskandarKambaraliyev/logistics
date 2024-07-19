@@ -67,8 +67,8 @@
               total transport distance, transport type (open or enclosed trailer
               shipment), and the time of year when you book. Don’t forget to
               check for additional promotions and savings. Get a quote with our
-              car shipping calculator, use our Live Chat, or call (888)
-              666-8929.
+              car shipping calculator, use our Live Chat, or call (210)
+              463-4436.
             </p>
           </div>
 
