@@ -14,9 +14,11 @@
     >
       Social media
     </h6>
+
     <ul class="flex max-md:flex-wrap gap-4">
       <li v-if="data.whatsapp">
         <NuxtLink
+          target="_blank"
           :to="data.whatsapp"
           class="footer_socials_link flex-center group"
         >
@@ -36,29 +38,10 @@
           </svg>
         </NuxtLink>
       </li>
-      <li v-if="data.facebook">
-        <NuxtLink
-          :to="data.facebook"
-          class="footer_socials_link flex-center group"
-        >
-          <svg
-            width="2rem"
-            height="2rem"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M8 0C3.58172 0 0 3.58172 0 8V24C0 28.4183 3.58172 32 8 32H24C28.4183 32 32 28.4183 32 24V8C32 3.58172 28.4183 0 24 0H8ZM22.9333 16L22.2222 20.4444H18.6667V32H13.3333V20.4444H9.33333V16H13.3333V12.4444C13.3333 8.44443 15.9111 6.22221 19.5556 6.22221C20.7111 6.22221 21.9556 6.39999 23.1111 6.57776V10.6667H21.0667C19.1111 10.6667 18.6667 11.6444 18.6667 12.8889V16H22.9333Z"
-              fill="#232B36"
-            />
-          </svg>
-        </NuxtLink>
-      </li>
+
       <li v-if="data.instagram">
         <NuxtLink
+          target="_blank"
           :to="data.instagram"
           class="footer_socials_link flex-center group"
         >
@@ -104,29 +87,10 @@
           </svg>
         </NuxtLink>
       </li>
-      <li v-if="data.linkedin">
-        <NuxtLink
-          :to="data.linkedin"
-          class="footer_socials_link flex-center group"
-        >
-          <svg
-            width="2rem"
-            height="2rem"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M8 0C3.58172 0 0 3.58172 0 8V24C0 28.4183 3.58172 32 8 32H24C28.4183 32 32 28.4183 32 24V8C32 3.58172 28.4183 0 24 0H8ZM7.18254 9.93773C8.71568 9.93773 9.95853 8.69487 9.95853 7.16173C9.95853 5.6286 8.71568 4.38574 7.18254 4.38574C5.6494 4.38574 4.40655 5.6286 4.40655 7.16173C4.40655 8.69487 5.6494 9.93773 7.18254 9.93773ZM12.5009 11.9893H17.1016V14.0969C17.1016 14.0969 18.35 11.5999 21.7469 11.5999C24.7771 11.5999 27.2873 13.0927 27.2873 17.6427V27.2373H22.5197V18.8053C22.5197 16.1212 21.0867 15.826 19.9948 15.826C17.7286 15.826 17.3407 17.7807 17.3407 19.1554V27.2373H12.5009V11.9893ZM9.60245 11.9893H4.76264V27.2373H9.60245V11.9893Z"
-              fill="#232B36"
-            />
-          </svg>
-        </NuxtLink>
-      </li>
+
       <li v-if="data.telegram">
         <NuxtLink
+          target="_blank"
           :to="data.telegram"
           class="footer_socials_link flex-center group"
         >
@@ -148,8 +112,56 @@
           </svg>
         </NuxtLink>
       </li>
+
+      <!-- <li v-if="data.facebook">
+        <NuxtLink
+          target="_blank"
+          :to="data.facebook"
+          class="footer_socials_link flex-center group"
+        >
+          <svg
+            width="2rem"
+            height="2rem"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8 0C3.58172 0 0 3.58172 0 8V24C0 28.4183 3.58172 32 8 32H24C28.4183 32 32 28.4183 32 24V8C32 3.58172 28.4183 0 24 0H8ZM22.9333 16L22.2222 20.4444H18.6667V32H13.3333V20.4444H9.33333V16H13.3333V12.4444C13.3333 8.44443 15.9111 6.22221 19.5556 6.22221C20.7111 6.22221 21.9556 6.39999 23.1111 6.57776V10.6667H21.0667C19.1111 10.6667 18.6667 11.6444 18.6667 12.8889V16H22.9333Z"
+              fill="#232B36"
+            />
+          </svg>
+        </NuxtLink>
+      </li> -->
+
+      <!-- <li v-if="data.linkedin">
+        <NuxtLink
+          target="_blank"
+          :to="data.linkedin"
+          class="footer_socials_link flex-center group"
+        >
+          <svg
+            width="2rem"
+            height="2rem"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8 0C3.58172 0 0 3.58172 0 8V24C0 28.4183 3.58172 32 8 32H24C28.4183 32 32 28.4183 32 24V8C32 3.58172 28.4183 0 24 0H8ZM7.18254 9.93773C8.71568 9.93773 9.95853 8.69487 9.95853 7.16173C9.95853 5.6286 8.71568 4.38574 7.18254 4.38574C5.6494 4.38574 4.40655 5.6286 4.40655 7.16173C4.40655 8.69487 5.6494 9.93773 7.18254 9.93773ZM12.5009 11.9893H17.1016V14.0969C17.1016 14.0969 18.35 11.5999 21.7469 11.5999C24.7771 11.5999 27.2873 13.0927 27.2873 17.6427V27.2373H22.5197V18.8053C22.5197 16.1212 21.0867 15.826 19.9948 15.826C17.7286 15.826 17.3407 17.7807 17.3407 19.1554V27.2373H12.5009V11.9893ZM9.60245 11.9893H4.76264V27.2373H9.60245V11.9893Z"
+              fill="#232B36"
+            />
+          </svg>
+        </NuxtLink>
+      </li> -->
+      
       <!-- <li v-if="data.youtube">
         <NuxtLink
+        target="_blank"
           :to="data.youtube"
           class="footer_socials_link flex-center group"
         >

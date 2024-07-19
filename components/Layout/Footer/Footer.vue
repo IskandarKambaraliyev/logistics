@@ -7,7 +7,7 @@
       },
       {
         title: "Terms & conditions",
-        to: "/pages/terms-conditions",
+        to: "/pages/terms-and-conditions",
       },
       {
         title: "Privacy policy",
@@ -71,11 +71,11 @@
   };
 
   const socials = {
-    whatsapp: "#!",
+    whatsapp: "https://wa.me/+998906031012",
+    telegram: "https://t.me/Justin_D888",
+    instagram: "https://www.instagram.com/express_auto_carriers_llc/",
     facebook: "#!",
-    telegram: "#!",
     linkedin: "#!",
-    instagram: "#!",
   };
 
   const map =
