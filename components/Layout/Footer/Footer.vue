@@ -74,8 +74,8 @@
     whatsapp: "https://wa.me/+998906031012",
     telegram: "https://t.me/Justin_D888",
     instagram: "https://www.instagram.com/express_auto_carriers_llc/",
-    facebook: "#!",
-    linkedin: "#!",
+    facebook: "https://www.facebook.com/profile.php?id=61563020878879&mibextid=LQQJ4d",
+    linkedin: "https://www.linkedin.com/in/express-auto-carriers-llc-35859b31a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
   };
 
   const map =

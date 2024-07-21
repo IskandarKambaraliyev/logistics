@@ -113,7 +113,7 @@
         </NuxtLink>
       </li>
 
-      <!-- <li v-if="data.facebook">
+      <li v-if="data.facebook">
         <NuxtLink
           target="_blank"
           :to="data.facebook"
@@ -134,9 +134,9 @@
             />
           </svg>
         </NuxtLink>
-      </li> -->
+      </li>
 
-      <!-- <li v-if="data.linkedin">
+      <li v-if="data.linkedin">
         <NuxtLink
           target="_blank"
           :to="data.linkedin"
@@ -157,7 +157,7 @@
             />
           </svg>
         </NuxtLink>
-      </li> -->
+      </li>
       
       <!-- <li v-if="data.youtube">
         <NuxtLink
