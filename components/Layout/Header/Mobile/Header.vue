@@ -121,6 +121,15 @@
       <LayoutHeaderLogo :sticky="sticky && !open" />
 
       <div class="flex items-center gap-4">
+        <UiButton
+          variant="secondary"
+          :color="sticky ? 'dark' : 'light'"
+          class="max-sm:!hidden"
+          to="https://apps.msgplane.com/quote/eac"
+        >
+          Get an instant quote
+        </UiButton>
+
         <UiButtonCircle
           to="tel:(210) 463-4436"
           :color="sticky && !open ? 'dark' : 'light'"
@@ -240,7 +249,7 @@
               <NuxtLink
                 v-for="(item, index) in data.results"
                 :key="index"
-                :to="!item.children && item.link"
+                :to="!item.children ? item.link : null"
                 class="menu_btn group cursor-pointer"
                 @click="
                   () => {
@@ -264,9 +273,16 @@
               <UiButton to="/contact" variant="secondary" color="light">
                 Check my order
               </UiButton>
-              <UiButton variant="primary" color="light" @click="openInstant">
+              <UiButton
+                variant="primary"
+                color="light"
+                to="https://apps.msgplane.com/quote/eac"
+              >
                 Get an instant quote
               </UiButton>
+              <!-- <UiButton variant="primary" color="light" @click="openInstant">
+                Get an instant quote
+              </UiButton> -->
             </div>
           </div>
         </Transition>
@@ -287,11 +303,10 @@
 
 <style lang="scss" scoped>
   .menu {
-    @apply z-modal-1 transition-all bg-dark-blue-main text-white;
+    @apply z-modal-1 transition-all bg-dark-blue-main text-white top-8;
     position: fixed;
-    top: 2rem;
     left: 0;
-    height: calc(100lvh - 2.5rem);
+    height: calc(100lvh - 2rem);
     width: 100%;
 
     .wrapper {

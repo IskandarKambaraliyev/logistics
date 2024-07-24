@@ -123,7 +123,14 @@
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:flex md:items-center gap-4"
           >
-            <UiButton color="dark" variant="primary" @click="instant = true">
+            <!-- <UiButton color="dark" variant="primary" @click="instant = true">
+              Get an instant quote
+            </UiButton> -->
+            <UiButton
+              color="dark"
+              variant="primary"
+              to="https://apps.msgplane.com/quote/eac"
+            >
               Get an instant quote
             </UiButton>
             <UiButton color="dark" variant="secondary" to="/contact">

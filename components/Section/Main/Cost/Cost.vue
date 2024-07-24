@@ -78,6 +78,7 @@
             class="w-max max-w-max"
             data-aos="fade-up"
             :data-aos-delay="300"
+            to="/contact"
           >
             Car shipping cost information
           </UiButton>

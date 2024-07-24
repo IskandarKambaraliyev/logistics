@@ -128,10 +128,18 @@
           />
         </UiButtonCircle>
 
-        <UiButton
+        <!-- <UiButton
           variant="primary"
           :color="sticky ? 'dark' : 'light'"
           @click="openInstant"
+        >
+          Get an instant quote
+        </UiButton> -->
+
+        <UiButton
+          variant="primary"
+          :color="sticky ? 'dark' : 'light'"
+          to="https://apps.msgplane.com/quote/eac"
         >
           Get an instant quote
         </UiButton>
