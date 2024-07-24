@@ -48,7 +48,7 @@
     </NuxtLink>
 
     <LayoutHeaderDesktopLinks
-      :open="modelValue === item.title && item.children"
+      :open="modelValue === item.title && item.children?.length > 0"
       :data="item.children"
     />
   </div>
