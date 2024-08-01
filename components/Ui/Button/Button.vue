@@ -18,19 +18,13 @@
       type: String,
       required: false,
     },
-    disabled: {
-      type: Boolean,
-      default: false,
-      required: false,
-    },
   });
 </script>
 
 <template>
   <button
     v-if="!to"
-    :disabled="disabled"
-    class="ui_button"
+    class="ui_button disabled:!bg-gray-400"
     :class="`${variant === 'primary' ? 'primary' : 'secondary'} ${
       color === 'dark' ? 'dark' : 'light'
     }`"
@@ -116,6 +110,10 @@
         &:hover {
           box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.25);
         }
+
+        &:disabled {
+          box-shadow: unset !important;
+        }
       }
     }
 
@@ -123,6 +121,10 @@
       @media screen and (hover: hover) {
         &:hover {
           box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        &:disabled {
+          box-shadow: unset !important;
         }
       }
     }
