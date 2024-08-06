@@ -7,7 +7,7 @@
     message: "",
   });
 
-  const checked = ref(false);
+  const checked = ref(true);
 
   const handlePhone = () => {
     let inputVal = form.phone.replace(/\D/g, "");
@@ -132,12 +132,13 @@
         />
       </UiFormGroup>
 
-      <!-- <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4">
         <input
+          v-model="checked"
           type="checkbox"
           id="contact-checkbox"
-          v-model="checked"
           class="hidden"
+          checked
         />
         <label
           for="contact-checkbox"
@@ -152,23 +153,23 @@
           />
         </label>
         <label for="contact-checkbox">
-          By submitting this form, you agree to receive text messages from
-          Express Auto Carriers LLC. You can reply "STOP" to opt-out at any
-          time. This is our
+          By checking this box, you agree to receive text messages from Express
+          Auto Carriers LLC. You can reply "STOP" to opt-out at any time. This
+          is our
           <NuxtLink to="/pages/privacy-policy" class="hover:underline">
             <b>privacy policy</b>
           </NuxtLink>
         </label>
-      </div> -->
+      </div>
 
-      <p>
+      <!-- <p>
         By submitting this form, you agree to receive text messages from Express
         Auto Carriers LLC. You can reply "STOP" to opt-out at any time. This is
         our
         <NuxtLink to="/pages/privacy-policy" class="hover:underline select-text">
           <b>privacy policy</b>
         </NuxtLink>
-      </p>
+      </p> -->
 
       <UiButton type="submit" variant="primary" color="white">
         Send message
