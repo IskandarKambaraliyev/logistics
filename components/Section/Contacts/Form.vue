@@ -7,7 +7,7 @@
     message: "",
   });
 
-  const checked = ref(true);
+  const checked = ref(false);
 
   const handlePhone = () => {
     let inputVal = form.phone.replace(/\D/g, "");
@@ -138,7 +138,6 @@
           type="checkbox"
           id="contact-checkbox"
           class="hidden"
-          checked
         />
         <label
           for="contact-checkbox"
