@@ -132,7 +132,7 @@
         />
       </UiFormGroup>
 
-      <div class="flex items-center gap-4">
+      <!-- <div class="flex items-center gap-4">
         <input
           type="checkbox"
           id="contact-checkbox"
@@ -152,23 +152,35 @@
           />
         </label>
         <label for="contact-checkbox">
-          By checking this box you agree to receive text messages from Express
-          Auto Carriers LLC, you can reply stop to opt-out at any time, this is
-          our
+          By submitting this form, you agree to receive text messages from
+          Express Auto Carriers LLC. You can reply "STOP" to opt-out at any
+          time. This is our
           <NuxtLink to="/pages/privacy-policy" class="hover:underline">
             <b>privacy policy</b>
           </NuxtLink>
         </label>
-      </div>
+      </div> -->
 
-      <UiButton
+      <p>
+        By submitting this form, you agree to receive text messages from Express
+        Auto Carriers LLC. You can reply "STOP" to opt-out at any time. This is
+        our
+        <NuxtLink to="/pages/privacy-policy" class="hover:underline select-text">
+          <b>privacy policy</b>
+        </NuxtLink>
+      </p>
+
+      <UiButton type="submit" variant="primary" color="white">
+        Send message
+      </UiButton>
+      <!-- <UiButton
         type="submit"
         variant="primary"
         color="white"
         :disabled="!checked"
       >
         Send message
-      </UiButton>
+      </UiButton> -->
     </form>
   </div>
 </template>
