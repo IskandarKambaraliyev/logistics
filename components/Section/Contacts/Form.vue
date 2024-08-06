@@ -162,26 +162,9 @@
         </label>
       </div>
 
-      <!-- <p>
-        By submitting this form, you agree to receive text messages from Express
-        Auto Carriers LLC. You can reply "STOP" to opt-out at any time. This is
-        our
-        <NuxtLink to="/pages/privacy-policy" class="hover:underline select-text">
-          <b>privacy policy</b>
-        </NuxtLink>
-      </p> -->
-
       <UiButton type="submit" variant="primary" color="white">
         Send message
       </UiButton>
-      <!-- <UiButton
-        type="submit"
-        variant="primary"
-        color="white"
-        :disabled="!checked"
-      >
-        Send message
-      </UiButton> -->
     </form>
   </div>
 </template>
