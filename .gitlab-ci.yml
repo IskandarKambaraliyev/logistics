@@ -3,9 +3,9 @@ stages:          # List of stages for jobs, and their order of execution
 deploy_production:
   stage: deploy
   script:
-    - cd /var/www/eac/eac-front/ && sudo -u redmedia git stash && sudo -u redmedia git pull
+    - cd /var/www/eac/eac-front/ && sudo -u idrok git pull
     - cd /var/www/eac/eac-front/ && npm install && npm run build
-    - sudo -u redmedia pm2 restart eac
+    - sudo -u idrok pm2 restart eac
   environment:
     name: production
     url: https://express-auto-carriers.com/
