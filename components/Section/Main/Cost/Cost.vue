@@ -38,9 +38,9 @@
         class="container grid grid-cols-1 lg:grid-cols-2 gap-y-20 gap-x-[7.5rem]"
       >
         <div
-          class="flex flex-col max-lg:items-center gap-8 md:gap-12 lg:gap-14"
+          class="flex flex-col gap-8 max-lg:items-center md:gap-12 lg:gap-14"
         >
-          <div class="flex flex-col max-lg:items-center gap-6">
+          <div class="flex flex-col gap-6 max-lg:items-center">
             <div
               class="max-w-[15rem] md:max-w-[20rem] lg:max-w-[28rem] w-full"
               data-aos="fade-up"
@@ -67,8 +67,8 @@
               total transport distance, transport type (open or enclosed trailer
               shipment), and the time of year when you book. Don’t forget to
               check for additional promotions and savings. Get a quote with our
-              car shipping calculator, use our Live Chat, or call (210)
-              463-4436.
+              car shipping calculator, use our Live Chat, or call (205)
+              417-7888.
             </p>
           </div>
 
@@ -85,18 +85,18 @@
         </div>
 
         <ul
-          class="main_cost_list lg:border-l border-white/20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 max-lg:gap-4 lg:pl-4"
+          class="grid grid-cols-1 main_cost_list lg:border-l border-white/20 md:grid-cols-2 lg:grid-cols-1 max-lg:gap-4 lg:pl-4"
         >
           <li
             v-for="item in data"
             :key="item.id"
-            class="main_cost_item flex max-lg:flex-col max-lg:items-center gap-6"
+            class="flex gap-6 main_cost_item max-lg:flex-col max-lg:items-center"
             data-aos="fade-left"
             :data-aos-delay="`${item.id * 100 + 600}`"
           >
             <div class="main_cost_item-icon" v-html="item.icon"></div>
             <div
-              class="flex-1 flex flex-col max-lg:items-center max-lg:text-center gap-2 lg:gap-4"
+              class="flex flex-col flex-1 gap-2 max-lg:items-center max-lg:text-center lg:gap-4"
             >
               <h6
                 class="text-[1.5rem] lg:text-[1.75rem] leading-[2.25rem] font-medium"

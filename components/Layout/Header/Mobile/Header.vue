@@ -117,7 +117,7 @@
         : 'bg-white/10 text-white'
     "
   >
-    <div class="px-4 md:px-8 flex items-center justify-between">
+    <div class="flex items-center justify-between px-4 md:px-8">
       <LayoutHeaderLogo :sticky="sticky && !open" />
 
       <div class="flex items-center gap-4">
@@ -131,7 +131,7 @@
         </UiButton>
 
         <UiButtonCircle
-          to="tel:(210) 463-4436"
+          to="tel:(205) 417-7888"
           :color="sticky && !open ? 'dark' : 'light'"
           class="xl:!hidden"
         >
@@ -250,7 +250,7 @@
                 v-for="(item, index) in data.results"
                 :key="index"
                 :to="!item.children ? item.link : null"
-                class="menu_btn group cursor-pointer"
+                class="cursor-pointer menu_btn group"
                 @click="
                   () => {
                     if (item.children) {
@@ -269,7 +269,7 @@
                 />
               </NuxtLink>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pb-24">
+            <div class="grid grid-cols-1 gap-3 pb-24 md:grid-cols-2">
               <UiButton to="/contact" variant="secondary" color="light">
                 Check my order
               </UiButton>

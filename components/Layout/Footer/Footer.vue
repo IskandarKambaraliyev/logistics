@@ -65,7 +65,7 @@
   // ];
 
   const contact = {
-    phone: "(210) 463-4436",
+    phone: "(205) 417-7888",
     email: "justin@express-auto-carriers.com",
     address: "9919 ARBOR MONTGOMERY LN BLDG 4, CINCINNATI OH 45249-8015",
   };
@@ -83,7 +83,7 @@
 </script>
 
 <template>
-  <div class="border-t border-dark-blue-700 relative">
+  <div class="relative border-t border-dark-blue-700">
     <div class="absolute inset-0 z-[-1]">
       <img
         src="/Earth.svg"
@@ -91,18 +91,18 @@
       />
     </div>
     <div
-      class="container py-10 md:pt-12 lg:pt-16 lg:pb-14 flex flex-col gap-12"
+      class="container flex flex-col gap-12 py-10 md:pt-12 lg:pt-16 lg:pb-14"
     >
-      <div class="flex max-lg:flex-col gap-12">
+      <div class="flex gap-12 max-lg:flex-col">
         <div
-          class="flex max-md:flex-col lg:flex-col items-start lg:justify-between h-full gap-y-10 gap-x-20"
+          class="flex items-start h-full max-md:flex-col lg:flex-col lg:justify-between gap-y-10 gap-x-20"
         >
           <LayoutFooterLogo />
 
           <LayoutFooterContacts :data="contact" class="lg:!hidden" />
         </div>
 
-        <div class="flex-1 flex items-start">
+        <div class="flex items-start flex-1">
           <LayoutFooterContacts :data="contact" class="max-lg:!hidden flex-1" />
 
           <LayoutFooterSocials :data="socials" />

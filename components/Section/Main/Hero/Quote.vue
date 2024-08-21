@@ -164,15 +164,15 @@
         >
           <span class="flex-1">Get an instant quote or call now</span>
           <NuxtLink
-            to="tel:(210) 463-4436"
-            class="text-blue-main hover:text-blue-700 select-text"
+            to="tel:(205) 417-7888"
+            class="select-text text-blue-main hover:text-blue-700"
           >
-            (210) 463-4436
+            (205) 417-7888
           </NuxtLink>
         </div>
 
         <form class="flex flex-col gap-6" @submit.prevent="handleStep1">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <UiFormGroup label="Transport car FROM" :required="false">
               <UiFormSelectZipcode
                 placeholder="City, State, Zipcode"
@@ -205,14 +205,14 @@
                 d="M6.82676 8.35346L11.8932 13.4199L11.4203 13.8928L5.52724 7.99972L11.4148 2.10619L11.8922 2.5809L6.82676 7.64635L6.47321 7.9999L6.82676 8.35346Z"
                 fill="#323232"
                 stroke="white"
-                class="stroke-dark-blue-main group-hover:stroke-white transition"
+                class="transition stroke-dark-blue-main group-hover:stroke-white"
               />
             </g>
           </svg>
         </UiButtonCircle>
 
         <form class="flex flex-col gap-6" @submit.prevent="handleStep2">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
             <UiFormGroup label="Year" :required="false" for="main-hero-year">
               <input
                 type="tel"
@@ -255,7 +255,7 @@
                 d="M6.82676 8.35346L11.8932 13.4199L11.4203 13.8928L5.52724 7.99972L11.4148 2.10619L11.8922 2.5809L6.82676 7.64635L6.47321 7.9999L6.82676 8.35346Z"
                 fill="#323232"
                 stroke="white"
-                class="stroke-dark-blue-main group-hover:stroke-white transition"
+                class="transition stroke-dark-blue-main group-hover:stroke-white"
               />
             </g>
           </svg>
@@ -263,7 +263,7 @@
 
         <form class="flex flex-col gap-6" @submit.prevent="handleStep3">
           <UiFormGroup label="Trailer type" :required="false">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
               <UiFormRadio
                 :active="form.type === 1"
                 @click="handleChangeType(1)"
@@ -280,7 +280,7 @@
           </UiFormGroup>
 
           <UiFormGroup label="Is vehicle operable?" :required="false">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
               <UiFormRadio
                 @click="handleChangeVehicle(1)"
                 :active="form.vehicle === 1"
@@ -314,14 +314,14 @@
                 d="M6.82676 8.35346L11.8932 13.4199L11.4203 13.8928L5.52724 7.99972L11.4148 2.10619L11.8922 2.5809L6.82676 7.64635L6.47321 7.9999L6.82676 8.35346Z"
                 fill="#323232"
                 stroke="white"
-                class="stroke-dark-blue-main group-hover:stroke-white transition"
+                class="transition stroke-dark-blue-main group-hover:stroke-white"
               />
             </g>
           </svg>
         </UiButtonCircle>
 
         <form class="flex flex-col gap-6" @submit.prevent="handleStep4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <UiFormGroup label="Ship date" for="main-hero-ship-date">
               <div class="relative" ref="datePickRef">
                 <input
@@ -331,7 +331,7 @@
                     form.ship_date ? format(form.ship_date, 'd MMM, yyy') : ''
                   "
                   :readonly="true"
-                  class="cursor-pointer w-full input"
+                  class="w-full cursor-pointer input"
                   :placeholder="format(today, 'd MMM, yyy')"
                   id="main-hero-ship-date"
                   ref="datePickInput"
@@ -339,7 +339,7 @@
                 />
 
                 <Transition name="fade-150">
-                  <div v-if="openDate" class="absolute top-full left-0">
+                  <div v-if="openDate" class="absolute left-0 top-full">
                     <DatePicker
                       locale="en"
                       v-model="form.ship_date"
@@ -363,7 +363,7 @@
             </UiFormGroup>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
             <UiFormGroup label="Email" for="main-hero-email">
               <UiFormInput
                 type="email"

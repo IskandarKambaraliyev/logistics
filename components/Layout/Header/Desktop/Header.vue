@@ -84,7 +84,7 @@
     "
     ref="header"
   >
-    <div class="container min-h-14 flex items-center justify-between gap-12">
+    <div class="container flex items-center justify-between gap-12 min-h-14">
       <div class="flex items-center gap-4 xl:gap-12">
         <LayoutHeaderLogo :sticky="sticky" />
 
@@ -106,14 +106,14 @@
         <UiButton
           variant="secondary"
           :color="sticky ? 'dark' : 'light'"
-          to="tel:(210) 463-4436"
+          to="tel:(205) 417-7888"
           class="max-xl:!hidden"
         >
-          (210) 463-4436
+          (205) 417-7888
         </UiButton>
 
         <UiButtonCircle
-          to="tel:(210) 463-4436"
+          to="tel:(205) 417-7888"
           :color="sticky ? 'dark' : 'light'"
           class="xl:!hidden"
         >
