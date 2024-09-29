@@ -13,7 +13,7 @@
     ogTitle: "Top-Rated Car Shipping & Auto Transportation Company",
     description: "Best Car Transport Service",
     ogDescription: "Best Car Transport Service",
-    ogImage: "/og-image.png",
+    ogImage: "/screenshot.png",
   });
 
   useHead({
