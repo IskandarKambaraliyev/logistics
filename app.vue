@@ -11,8 +11,10 @@
   useSeoMeta({
     title: "Top-Rated Car Shipping & Auto Transportation Company",
     ogTitle: "Top-Rated Car Shipping & Auto Transportation Company",
-    description: "Best Car Transport Service",
-    ogDescription: "Best Car Transport Service",
+    description:
+      "Looking for reliable and affordable car transport services? Our professional team provides secure, fast, and cost-effective vehicle shipping solutions for both short and long distances. Whether you're moving across the country or need a local transport service, we offer safe, door-to-door delivery with guaranteed on-time arrival. Trust us to handle your car with the utmost care and attention, ensuring a smooth and stress-free experience every time.",
+    ogDescription:
+      "Looking for reliable and affordable car transport services? Our professional team provides secure, fast, and cost-effective vehicle shipping solutions for both short and long distances. Whether you're moving across the country or need a local transport service, we offer safe, door-to-door delivery with guaranteed on-time arrival. Trust us to handle your car with the utmost care and attention, ensuring a smooth and stress-free experience every time.",
     ogImage: "/screenshot.png",
   });
 
