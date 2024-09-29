@@ -9,12 +9,10 @@
   });
 
   useSeoMeta({
-    title: "Express Auto Carriers",
-    ogTitle: "Express Auto Carriers",
-    description:
-      "Express Auto Carriers is a leading auto transport company in the USA. We offer a wide range of services to meet your auto shipping needs.",
-    ogDescription:
-      "Express Auto Carriers is a leading auto transport company in the USA. We offer a wide range of services to meet your auto shipping needs.",
+    title: "Top-Rated Car Shipping & Auto Transportation Company",
+    ogTitle: "Top-Rated Car Shipping & Auto Transportation Company",
+    description: "Best Car Transport Service",
+    ogDescription: "Best Car Transport Service",
     ogImage: "/og-image.png",
   });
 
